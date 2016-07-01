@@ -35,7 +35,6 @@ public class GetTest {
         jsonPlaceholderAPI.getCommentContent(6)
 
                 .then()
-                .log().all()
                 .body("id", equalTo(6));
     }
 
@@ -44,7 +43,6 @@ public class GetTest {
         jsonPlaceholderAPI.getAllUsers()
 
                 .then()
-                .log().all()
                 .body("findAll {it.id >= 9}.name", hasItems("Glenna Reichert", "Clementina DuBuque"));
     }
 
