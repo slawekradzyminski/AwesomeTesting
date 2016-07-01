@@ -14,8 +14,7 @@ import org.testng.annotations.Test;
  */
 public class FacebookTest extends FluentTestNg {
 
-    private static final String EMAIL = LoadProperties.loadProperty("email");
-    private static final String PASSWORD = LoadProperties.loadProperty("password");
+    private LoadProperties properties = new LoadProperties();
 
     @Override
     public WebDriver getDefaultDriver() {
@@ -26,7 +25,7 @@ public class FacebookTest extends FluentTestNg {
     public void authenticate() {
         FacebookLoggedOutPage fbLogOutPage = createPage(FacebookLoggedOutPage.class);
         fbLogOutPage.go();
-        fbLogOutPage.login(EMAIL, PASSWORD);
+        fbLogOutPage.login(properties.getProperty("email"), properties.getProperty("password"));
         fbLogOutPage.verifySuccessfulLogin();
     }
 

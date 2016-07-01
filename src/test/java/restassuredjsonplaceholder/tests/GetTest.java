@@ -1,0 +1,51 @@
+package restassuredjsonplaceholder.tests;
+
+import org.testng.annotations.Test;
+import restassuredjsonplaceholder.utils.JsonPlaceholderAPI;
+
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItems;
+
+/**
+ * See more at http://awesome-testing.blogspot.com/
+ */
+public class GetTest {
+
+    private JsonPlaceholderAPI jsonPlaceholderAPI = new JsonPlaceholderAPI();
+
+    @Test
+    public void testGetPostTitle() {
+        jsonPlaceholderAPI.getPostContent(1)
+
+                .then()
+                .body("title", equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
+    }
+
+    @Test
+    public void testGetPostBody() {
+        jsonPlaceholderAPI.getPostContent(100)
+
+                .then()
+                .body("body", containsString("cupiditate quo est a modi"));
+    }
+
+    @Test
+    public void testGetCommentId() {
+        jsonPlaceholderAPI.getCommentContent(6)
+
+                .then()
+                .log().all()
+                .body("id", equalTo(6));
+    }
+
+    @Test
+    public void testGetAllUsers() {
+        jsonPlaceholderAPI.getAllUsers()
+
+                .then()
+                .log().all()
+                .body("findAll {it.id >= 9}.name", hasItems("Glenna Reichert", "Clementina DuBuque"));
+    }
+
+}

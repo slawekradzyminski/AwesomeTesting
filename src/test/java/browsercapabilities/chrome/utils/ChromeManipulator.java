@@ -18,10 +18,10 @@ public class ChromeManipulator extends FluentTestNg {
     private static final String BROWSER_NOTIFICATIONS = "profile.managed_default_content_settings.notifications";
     private static final short DISABLED = 2;
 
-    String START_FULLSCREEN = "start-fullscreen";
-    String ALLOW_INSECURE_CONTENT = "allow-running-insecure-content";
-    String INCOGNITO = "incognito";
-    String IGNORE_CERTIFICATE_ERRORS = "--ignore-certificate-errors";
+    private static final String START_FULLSCREEN = "start-fullscreen";
+    private static final String ALLOW_INSECURE_CONTENT = "allow-running-insecure-content";
+    private static final String INCOGNITO = "incognito";
+    private static final String IGNORE_CERTIFICATE_ERRORS = "--ignore-certificate-errors";
 
     @Override
     public WebDriver getDefaultDriver() {

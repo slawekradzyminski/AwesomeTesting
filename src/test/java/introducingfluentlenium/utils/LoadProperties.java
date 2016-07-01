@@ -5,15 +5,25 @@ import java.util.Properties;
 
 public class LoadProperties {
 
-    public static String loadProperty(String property) {
+    private Properties properties;
+
+    public LoadProperties() {
+        properties = loadProperties();
+    }
+
+    private static Properties loadProperties() {
         Properties properties = new Properties();
         try {
             properties.load(LoadProperties.class.getResourceAsStream("/user.properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return properties.getProperty(property);
+        return properties;
 
+    }
+
+    public String getProperty (String property) {
+        return properties.getProperty(property);
     }
 
 }
