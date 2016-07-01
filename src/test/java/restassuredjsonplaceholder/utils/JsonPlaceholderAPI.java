@@ -11,7 +11,7 @@ import static java.lang.String.format;
 
 public class JsonPlaceholderAPI {
 
-    private static final String URL = "http://jsonplaceholder.typicode.com/";
+    private static final String URL = "http://jsonplaceholder.typicode.com";
 
     private final RestAssuredConfig restAssuredConfig = RestAssured.config().encoderConfig(encoderConfig().defaultContentCharset("UTF-8"));
 
@@ -20,7 +20,7 @@ public class JsonPlaceholderAPI {
                 .contentType(JSON)
 
                 .when()
-                .get(URL + format("posts/%s", Integer.toString(postNumber)));
+                .get(format("%s/posts/%s", URL, Integer.toString(postNumber)));
     }
 
     public Response getCommentContent(int postNumber) {
@@ -28,7 +28,7 @@ public class JsonPlaceholderAPI {
                 .contentType(JSON)
 
                 .when()
-                .get(URL + format("comments/%s", Integer.toString(postNumber)));
+                .get(format("%s/comments/%s", URL, Integer.toString(postNumber)));
     }
 
     public Response getAllUsers() {
@@ -36,7 +36,7 @@ public class JsonPlaceholderAPI {
                 .contentType(JSON)
 
                 .when()
-                .get(URL + "users");
+                .get(format("%s/users", URL));
     }
 
     public Response postNewPost(User user) {
@@ -47,7 +47,7 @@ public class JsonPlaceholderAPI {
                 .body(user)
 
                 .when()
-                .post(URL + "posts");
+                .post(format("%s/posts", URL));
     }
 
     public Response putNewPost(User user, int postNumber) {
@@ -57,7 +57,7 @@ public class JsonPlaceholderAPI {
                 .body(user)
 
                 .when()
-                .put(URL + format("posts/%s", Integer.toString(postNumber)));
+                .put(format("%s/posts/%s", URL, Integer.toString(postNumber)));
     }
 
     public Response deletePost(int postNumber) {
@@ -66,7 +66,7 @@ public class JsonPlaceholderAPI {
                 .contentType(JSON)
 
                 .when()
-                .delete(URL + format("posts/%s", Integer.toString(postNumber)));
+                .delete(format("%s/posts/%s", URL, Integer.toString(postNumber)));
     }
 
 }
