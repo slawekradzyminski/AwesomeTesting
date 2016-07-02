@@ -20,8 +20,8 @@ public class FirefoxManipulator extends FluentTestNg {
         File profileDirectory = new File(PROFILE_DIRECTORY);
         FirefoxProfile profile = new FirefoxProfile(profileDirectory);
         profile.setAcceptUntrustedCertificates(true);
-
         profile.setPreference(HOMEPAGE_KEY, HOMEPAGE_VALUE);
+
         return new FirefoxDriver(profile);
     }
 }

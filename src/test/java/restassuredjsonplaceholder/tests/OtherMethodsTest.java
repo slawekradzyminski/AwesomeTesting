@@ -8,7 +8,7 @@ import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.apache.http.HttpStatus.SC_OK;
 
 /**
- * See more at http://awesome-testing.blogspot.com/
+ * See more at http://awesome-testing.blogspot.com/2016/07/restful-api-testing-with-rest-assured-1.html
  */
 public class OtherMethodsTest {
 
