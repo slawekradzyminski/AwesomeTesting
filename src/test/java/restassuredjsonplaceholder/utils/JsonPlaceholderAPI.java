@@ -1,12 +1,13 @@
 package restassuredjsonplaceholder.utils;
 
-import com.jayway.restassured.RestAssured;
-import com.jayway.restassured.config.RestAssuredConfig;
-import com.jayway.restassured.response.Response;
 
-import static com.jayway.restassured.RestAssured.given;
-import static com.jayway.restassured.config.EncoderConfig.encoderConfig;
-import static com.jayway.restassured.http.ContentType.JSON;
+import io.restassured.RestAssured;
+import io.restassured.config.RestAssuredConfig;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.given;
+import static io.restassured.config.EncoderConfig.encoderConfig;
+import static io.restassured.http.ContentType.JSON;
 import static java.lang.String.format;
 
 public class JsonPlaceholderAPI {

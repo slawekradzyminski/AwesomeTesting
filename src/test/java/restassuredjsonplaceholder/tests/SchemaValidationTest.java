@@ -3,7 +3,8 @@ package restassuredjsonplaceholder.tests;
 import org.testng.annotations.Test;
 import restassuredjsonplaceholder.utils.JsonPlaceholderAPI;
 
-import static com.jayway.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+
 
 /**
  * See more at http://awesome-testing.blogspot.com/2016/07/restful-api-testing-with-rest-assured-1.html
