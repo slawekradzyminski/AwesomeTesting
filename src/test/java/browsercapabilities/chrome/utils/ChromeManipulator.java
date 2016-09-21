@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.lang.String.format;
+
 public class ChromeManipulator extends FluentTestNg {
 
     private static final String PREFS = "prefs";
@@ -22,6 +24,9 @@ public class ChromeManipulator extends FluentTestNg {
     private static final String ALLOW_INSECURE_CONTENT = "allow-running-insecure-content";
     private static final String INCOGNITO = "incognito";
     private static final String IGNORE_CERTIFICATE_ERRORS = "--ignore-certificate-errors";
+    private static final String USER_AGENT = "--user-agent";
+
+    private final String iOS6UA = "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25";
 
     @Override
     public WebDriver getDefaultDriver() {
@@ -62,6 +67,7 @@ public class ChromeManipulator extends FluentTestNg {
         chromeSwitches.add(INCOGNITO);
         chromeSwitches.add(ALLOW_INSECURE_CONTENT);
         chromeSwitches.add(IGNORE_CERTIFICATE_ERRORS);
+        chromeSwitches.add(format("%s%s%s", USER_AGENT, "=", iOS6UA));
         chromeSwitches.add(START_FULLSCREEN);
         return chromeSwitches;
     }
