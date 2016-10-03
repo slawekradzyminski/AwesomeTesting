@@ -21,12 +21,6 @@ public class WaitingDemoTest extends FluentTestNg {
     private static final String AJAX_BUTTON_CSS = "#submitajax";
     private static final String ALERT_RESULT_CSS = ".alert-success";
 
-    private Predicate<Fluent> ajaxCallCompleted = fluent -> {
-        final JavascriptExecutor driver = (JavascriptExecutor) getDriver();
-        return (Boolean) driver
-                .executeScript("return (window.jQuery != null) && (jQuery.active === 0);");
-    };
-
     @Test
     public void ajaxCallTest() {
         goTo(URL);
@@ -35,6 +29,12 @@ public class WaitingDemoTest extends FluentTestNg {
         await().atMost(5, TimeUnit.SECONDS).untilPredicate(ajaxCallCompleted::test);
         assertThat(findFirst(ALERT_RESULT_CSS).getText()).isEqualTo(SUCCESS_TEXT);
     }
+
+    public Predicate<Fluent> ajaxCallCompleted = fluent -> {
+        final JavascriptExecutor driver = (JavascriptExecutor) getDriver();
+        return (Boolean) driver
+                .executeScript("return (window.jQuery != null) && (jQuery.active === 0);");
+    };
 
 }
 
