@@ -22,7 +22,7 @@ public class BrowserMobChrome extends FluentTestNg {
     public void startBMP() {
         server = new BrowserMobProxyServer();
         server.start(BROWSER_MOB_PROXY_PORT);
-        server.setHarCaptureTypes(CaptureType.getAllContentCaptureTypes());
+        server.setHarCaptureTypes(CaptureType.getHeaderCaptureTypes());
     }
 
     @Override

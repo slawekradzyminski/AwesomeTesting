@@ -20,7 +20,7 @@ public class GoogleHomePage extends FluentPage {
     }
 
     public GoogleSearchResultPage search(String searchPhrase) {
-    findFirst(SEARCH_BOX_SELECTOR).fill().with(searchPhrase + Keys.ENTER);
+        findFirst(SEARCH_BOX_SELECTOR).fill().with(searchPhrase + Keys.ENTER);
         return createPage(GoogleSearchResultPage.class);
     }
 
