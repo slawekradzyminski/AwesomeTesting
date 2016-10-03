@@ -8,7 +8,6 @@ public class AwesomeTestingPage extends FluentPage {
 
     private static final String LOGO_SELECTOR = "[alt='Awesome Testing']";
 
-
     @Override
     public String getUrl() {
         return "http://awesome-testing.blogspot.com/";

@@ -12,8 +12,8 @@ public class GoogleSearchResultPage extends FluentPage {
         await().atMost(5, TimeUnit.SECONDS).until("#resultStats").isDisplayed();
     }
 
-    public AwesomeTestingPage clickLink(String searchPhrase) {
-        findFirst(By.linkText(searchPhrase)).click();
+    public AwesomeTestingPage clickLink(String linkToClick) {
+        findFirst(By.linkText(linkToClick)).click();
         return createPage(AwesomeTestingPage.class);
     }
 
