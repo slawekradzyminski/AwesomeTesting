@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * See more soone at Awesome Testing (post not yet done)
+ * See more soone at http://awesome-testing.blogspot.com/2016/10/browsermob-proxy-selenium-network.html
  */
 public class BrowserMobChromeTest extends BrowserMobChrome {
 
