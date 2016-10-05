@@ -15,8 +15,6 @@ import java.io.IOException;
  */
 public class BrowserMobChromeTest extends BrowserMobChrome {
 
-    private static final String AWESOME_TESTING = "Awesome Testing";
-
     @Test
     public void awesomeTestingOnly() throws IOException {
         server.newHar("Awesome Testing Only Test");
@@ -36,10 +34,10 @@ public class BrowserMobChromeTest extends BrowserMobChrome {
         googleHomePage.go();
         googleHomePage.isAt();
 
-        GoogleSearchResultPage googleSearchResultPage = googleHomePage.search(AWESOME_TESTING);
+        GoogleSearchResultPage googleSearchResultPage = googleHomePage.search("Awesome Testing blog");
         googleSearchResultPage.isAt();
 
-        AwesomeTestingPage awesomeTestingPage = googleSearchResultPage.clickLink(AWESOME_TESTING);
+        AwesomeTestingPage awesomeTestingPage = googleSearchResultPage.clickLink("Awesome Testing");
         awesomeTestingPage.isAt();
 
         Har har = server.getHar();
