@@ -76,6 +76,13 @@
             <version>2.0.1</version>
         </dependency>
 
+        <!-- This dependency was added to show vulnerabilities on OWASP dependency check report -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.1</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
