@@ -97,6 +97,7 @@
         </plugins>
     </build>
 
+    <!-- mvn -P security dependency-check:check -->
     <profiles>
         <profile>
             <id>security</id>
