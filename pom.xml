@@ -110,6 +110,7 @@
                         <configuration>
                             <cveValidForHours>12</cveValidForHours>
                             <failBuildOnCVSS>1</failBuildOnCVSS>
+                            <suppressionFile>src/test/resources/ignore.xml</suppressionFile>
                         </configuration>
                         <executions>
                             <execution>
