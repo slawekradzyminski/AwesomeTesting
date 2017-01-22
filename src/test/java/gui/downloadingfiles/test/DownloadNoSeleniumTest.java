@@ -10,7 +10,7 @@ import static org.apache.http.HttpStatus.SC_OK;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * See more at http://awesome-testing.blogspot.com/2016/06/how-to-download-files-using-selenium-2.html
+ * See more at http://awesome-testing.com/2016/06/how-to-download-files-using-selenium-2.html
  */
 public class DownloadNoSeleniumTest {
 

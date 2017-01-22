@@ -16,12 +16,12 @@ public class GoogleHomePage extends FluentPage {
 
     @Override
     public void isAt() {
-        await().atMost(5, TimeUnit.SECONDS).until(SEARCH_BOX_SELECTOR).isDisplayed();
+        await().atMost(5, TimeUnit.SECONDS).until(el(SEARCH_BOX_SELECTOR)).displayed();
     }
 
     public GoogleSearchResultPage search(String searchPhrase) {
-        findFirst(SEARCH_BOX_SELECTOR).fill().with(searchPhrase + Keys.ENTER);
-        return createPage(GoogleSearchResultPage.class);
+        el(SEARCH_BOX_SELECTOR).fill().with(searchPhrase + Keys.ENTER);
+        return newInstance(GoogleSearchResultPage.class);
     }
 
 }

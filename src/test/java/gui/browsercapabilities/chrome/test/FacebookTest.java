@@ -4,7 +4,7 @@ import gui.browsercapabilities.chrome.utils.ChromeManipulator;
 import org.testng.annotations.Test;
 
 /**
- * See more at http://awesome-testing.blogspot.com/2016/02/selenium-browser-capabilities-explained.html
+ * See more at http://awesome-testing.com/2016/02/selenium-browser-capabilities-explained.html
  */
 public class FacebookTest extends ChromeManipulator {
 

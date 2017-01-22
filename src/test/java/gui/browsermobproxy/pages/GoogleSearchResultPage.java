@@ -9,12 +9,12 @@ public class GoogleSearchResultPage extends FluentPage {
 
     @Override
     public void isAt() {
-        await().atMost(5, TimeUnit.SECONDS).until("#resultStats").isDisplayed();
+        await().atMost(5, TimeUnit.SECONDS).until(el(By.linkText("Awesome Testing"))).displayed();
     }
 
     public AwesomeTestingPage clickLink(String linkToClick) {
-        findFirst(By.linkText(linkToClick)).click();
-        return createPage(AwesomeTestingPage.class);
+        el(By.linkText(linkToClick)).click();
+        return newInstance(AwesomeTestingPage.class);
     }
 
 }

@@ -3,7 +3,7 @@ package gui.browsermobproxy.utils;
 import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;
 import net.lightbody.bmp.proxy.CaptureType;
-import org.fluentlenium.adapter.FluentTestNg;
+import org.fluentlenium.adapter.testng.FluentTestNg;
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,7 +26,7 @@ public class BrowserMobChrome extends FluentTestNg {
     }
 
     @Override
-    public WebDriver getDefaultDriver() {
+    public WebDriver newWebDriver() {
         return new ChromeDriver(getChromeCapabilities());
     }
 

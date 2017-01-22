@@ -14,7 +14,7 @@ public class GroupApprovePage extends FluentPage {
 
     @Override
     public void isAt() {
-        await().until(APPROVE_ALL_BUTTON).isPresent();
+        await().until(el(APPROVE_ALL_BUTTON)).present();
     }
 
     public void approveAll() {
@@ -22,8 +22,8 @@ public class GroupApprovePage extends FluentPage {
     }
 
     public void confirm() {
-        await().until(CONFIRM_APPROVAL_BUTTON).isPresent();
-        findFirst(CONFIRM_APPROVAL_BUTTON).click();
+        await().until(el(CONFIRM_APPROVAL_BUTTON)).present();
+        el(CONFIRM_APPROVAL_BUTTON).click();
     }
 
 }

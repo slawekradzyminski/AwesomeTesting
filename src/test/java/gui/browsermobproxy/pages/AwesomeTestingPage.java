@@ -15,7 +15,7 @@ public class AwesomeTestingPage extends FluentPage {
 
     @Override
     public void isAt() {
-        await().atMost(5, TimeUnit.SECONDS).until(LOGO_SELECTOR).isDisplayed();
+        await().atMost(5, TimeUnit.SECONDS).until(el(LOGO_SELECTOR)).displayed();
     }
 
 }

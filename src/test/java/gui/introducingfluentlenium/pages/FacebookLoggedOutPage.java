@@ -15,13 +15,13 @@ public class FacebookLoggedOutPage extends FluentPage {
     private static final String SIGN_IN_BUTTON = "#loginbutton";
 
     public void login(String email, String password) {
-        fill(LOGIN_FIELD).with(email);
-        fill(PASS_FIELD).with(password);
+        el(LOGIN_FIELD).fill().with(email);
+        el(PASS_FIELD).fill().with(password);
         find(SIGN_IN_BUTTON).first().click();
     }
 
     public void verifySuccessfulLogin() {
-        await().until(WAITER_SELECTOR_AFTER_LOGIN).areDisplayed();
+        await().until(el(WAITER_SELECTOR_AFTER_LOGIN)).displayed();
     }
 
 }

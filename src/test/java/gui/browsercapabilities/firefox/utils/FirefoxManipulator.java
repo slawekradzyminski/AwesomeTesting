@@ -1,6 +1,6 @@
 package gui.browsercapabilities.firefox.utils;
 
-import org.fluentlenium.adapter.FluentTestNg;
+import org.fluentlenium.adapter.testng.FluentTestNg;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -15,7 +15,7 @@ public class FirefoxManipulator extends FluentTestNg {
     private static final String HOMEPAGE_VALUE = "www.google.pl";
 
     @Override
-    public WebDriver getDefaultDriver() {
+    public WebDriver newWebDriver() {
 
         File profileDirectory = new File(PROFILE_DIRECTORY);
         FirefoxProfile profile = new FirefoxProfile(profileDirectory);

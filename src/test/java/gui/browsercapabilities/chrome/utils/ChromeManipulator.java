@@ -1,6 +1,6 @@
 package gui.browsercapabilities.chrome.utils;
 
-import org.fluentlenium.adapter.FluentTestNg;
+import org.fluentlenium.adapter.testng.FluentTestNg;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,10 +26,10 @@ public class ChromeManipulator extends FluentTestNg {
     private static final String IGNORE_CERTIFICATE_ERRORS = "--ignore-certificate-errors";
     private static final String USER_AGENT = "--user-agent";
 
-    private final String iOS6UA = "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25";
+    private static final String iOS6UA = "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25";
 
     @Override
-    public WebDriver getDefaultDriver() {
+    public WebDriver newWebDriver() {
         return new ChromeDriver(getChromeCapabilities());
     }
 

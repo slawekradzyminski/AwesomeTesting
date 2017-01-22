@@ -5,21 +5,27 @@ import gui.browsermobproxy.pages.GoogleHomePage;
 import gui.browsermobproxy.pages.GoogleSearchResultPage;
 import gui.browsermobproxy.utils.BrowserMobChrome;
 import net.lightbody.bmp.core.har.Har;
+import org.fluentlenium.core.annotation.Page;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
 
 /**
- * See more at http://awesome-testing.blogspot.com/2016/10/browsermob-proxy-selenium-network.html
+ * See more at http://awesome-testing.com/2016/10/browsermob-proxy-selenium-network.html
  */
 public class BrowserMobChromeTest extends BrowserMobChrome {
+
+    @Page
+    private AwesomeTestingPage awesomeTestingPage;
+
+    @Page
+    private GoogleHomePage googleHomePage;
 
     @Test
     public void awesomeTestingOnly() throws IOException {
         server.newHar("Awesome Testing Only Test");
 
-        AwesomeTestingPage awesomeTestingPage = createPage(AwesomeTestingPage.class);
         awesomeTestingPage.go();
         awesomeTestingPage.isAt();
 
@@ -30,7 +36,6 @@ public class BrowserMobChromeTest extends BrowserMobChrome {
     @Test
     public void googleAwesomeTesting() throws IOException {
         server.newHar("Google Awesome Testing Test");
-        GoogleHomePage googleHomePage = createPage(GoogleHomePage.class);
         googleHomePage.go();
         googleHomePage.isAt();
 
