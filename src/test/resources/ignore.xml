@@ -2,11 +2,11 @@
 <suppressions xmlns="https://www.owasp.org/index.php/OWASP_Dependency_Check_Suppression"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="https://www.owasp.org/index.php/OWASP_Dependency_Check_Suppression ">
-    <!--<suppress>-->
-        <!--<notes><![CDATA[-->
-   <!--file name: commons-collections-3.1.jar-->
-   <!--]]></notes>-->
-        <!--<gav regex="true">^commons-collections:commons-collections:.*$</gav>-->
-        <!--<cve>CVE-2015-6420</cve>-->
-    <!--</suppress>-->
+    <suppress>
+        <notes><![CDATA[
+   file name: commons-collections-3.1.jar
+   ]]></notes>
+        <gav regex="true">^commons-collections:commons-collections:.*$</gav>
+        <cve>CVE-2015-6420</cve>
+    </suppress>
 </suppressions>
