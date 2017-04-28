@@ -1,10 +1,8 @@
-package gui.waitingdemo;
+package gui.headlesschrome.test;
 
-import org.fluentlenium.adapter.testng.FluentTestNg;
+import gui.headlesschrome.utils.HeadlessChromeConfig;
 import org.fluentlenium.core.FluentControl;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -13,20 +11,15 @@ import java.util.function.Predicate;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * See more at http://awesome-testing.com/2016/04/introducing-fluentlenium-2-selenium.html
+ * See more at http://awesome-testing.com/
  */
-public class WaitingDemoTest extends FluentTestNg {
+public class HeadlessChromeTest extends HeadlessChromeConfig {
 
     private static final String URL = "https://resttesttest.com/";
     private static final String SUCCESS_TEXT = "HTTP 200 OK";
 
     private static final String AJAX_BUTTON_CSS = "#submitajax";
     private static final String ALERT_RESULT_CSS = ".alert-success";
-
-    @Override
-    public WebDriver newWebDriver() {
-        return new ChromeDriver();
-    }
 
     @SuppressWarnings("Duplicates")
     @Test
