@@ -12,6 +12,8 @@ http://awesome-testing.com/2016/06/how-to-download-files-using-selenium-2.html
 
 http://awesome-testing.com/2016/10/browsermob-proxy-selenium-network.html
 
+http://www.awesome-testing.com/2017/05/headless-testing-with-google-chrome.html
+
 `Rest-Assured related posts:`
 
 http://awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html

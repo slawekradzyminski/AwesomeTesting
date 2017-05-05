@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * See more at http://awesome-testing.com/
+ * See more at http://www.awesome-testing.com/2017/05/headless-testing-with-google-chrome.html
  */
 public class HeadlessChromeTest extends HeadlessChromeConfig {
 
