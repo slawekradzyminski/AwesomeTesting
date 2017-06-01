@@ -31,7 +31,7 @@ public class BlogTest extends FluentTestNg {
     @Test
     public void shouldBeFivePosts() {
         homePage.go();
-        homePage.assertThatNumberOFTitlesEquals(EXPECTED_NUMBER_OF_POSTS);
+        homePage.assertThatNumberOfTitlesEquals(EXPECTED_NUMBER_OF_POSTS);
     }
 
 }

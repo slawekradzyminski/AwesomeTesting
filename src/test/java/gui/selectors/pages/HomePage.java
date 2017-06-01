@@ -21,7 +21,7 @@ public class HomePage extends FluentPage {
         assertThat(header).isDisplayed();
     }
 
-    public void assertThatNumberOFTitlesEquals(int numberOfTitles) {
+    public void assertThatNumberOfTitlesEquals(int numberOfTitles) {
         assertThat(pageTitles).hasSize(numberOfTitles);
     }
 }
