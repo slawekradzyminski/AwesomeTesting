@@ -1,4 +1,4 @@
-package api.jsontest;
+package api.jsontest.test;
 
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
@@ -16,14 +16,19 @@ import static java.lang.String.format;
 import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
 import static org.hamcrest.CoreMatchers.*;
 
-public class RestTest {
+/**
+ * See more at http://www.awesome-testing.com/2017/06/rest-assured-integration-tests-for.html
+ */
+public class JsonTest {
 
     @Test
     public void ipTest() {
+        String partOfMyIp = "142";
+
         given().contentType(JSON)
                 .when().get("http://ip.jsontest.com")
                 .then()
-                .body("ip", containsString("142"));
+                .body("ip", containsString(partOfMyIp));
     }
 
     @Test
@@ -61,6 +66,7 @@ public class RestTest {
         given().contentType(JSON)
                 .when().get(format("http://%s/%s/%s/%s/%s",
                 "echo.jsontest.com", firstKey, firstValue, secondKey, secondValue))
+
                 .then()
                 .body(firstKey, equalTo(firstValue))
                 .body(secondKey, equalTo(secondValue));
@@ -107,7 +113,7 @@ public class RestTest {
     }
 
     @Test
-    public void shouldCalculateMd5() {
+    public void shouldPrintMd5() {
         String myRandomText = "My random text";
         String md5 = md5Hex(myRandomText);
 

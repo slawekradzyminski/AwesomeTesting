@@ -20,6 +20,8 @@ http://www.awesome-testing.com/2017/05/headless-testing-with-google-chrome.html
 
 http://www.awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html
 
+http://www.awesome-testing.com/2017/06/rest-assured-integration-tests-for.html
+
 `Security posts`
 
 http://www.awesome-testing.com/2017/02/continuous-security-with-owasp.html
