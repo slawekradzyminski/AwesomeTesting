@@ -13,7 +13,7 @@ public class ChromeProxyTest extends ChromeProxyConfig {
 
     private static final String URL = "https://www.google.com/";
 
-    private static final String MY_CHROMEDRIVER_PATH = "C:\\chromedriver.exe";
+    private static final String MY_CHROMEDRIVER_PATH = "C:\\drivers\\chromedriver.exe";
 
     @BeforeTest
     public void setUp() {

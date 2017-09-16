@@ -1,27 +1,45 @@
 package gui.browsercapabilities.firefox.utils;
 
+import org.apache.commons.lang3.SystemUtils;
 import org.fluentlenium.adapter.testng.FluentTestNg;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeTest;
 
-import java.io.File;
+import java.util.logging.Level;
 
 public class FirefoxManipulator extends FluentTestNg {
-
-    private static final String PROFILE_DIRECTORY = "insert_your_path_here";
 
     private static final String HOMEPAGE_KEY = "browser.startup.homepage";
     private static final String HOMEPAGE_VALUE = "www.google.pl";
 
+    private static final String MY_GECKO_PATH = "C:\\drivers\\geckodriver.exe";
+
+    @BeforeTest
+    public void setUp() {
+        if (SystemUtils.IS_OS_WINDOWS) {
+            System.setProperty("webdriver.gecko.driver", MY_GECKO_PATH);
+        }
+    }
+
     @Override
     public WebDriver newWebDriver() {
+        return new FirefoxDriver(getFirefoxCapabilities());
+    }
 
-        File profileDirectory = new File(PROFILE_DIRECTORY);
-        FirefoxProfile profile = new FirefoxProfile(profileDirectory);
-        profile.setAcceptUntrustedCertificates(true);
-        profile.setPreference(HOMEPAGE_KEY, HOMEPAGE_VALUE);
+    private DesiredCapabilities getFirefoxCapabilities() {
+        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        capabilities.setAcceptInsecureCerts(true);
+        capabilities.setCapability(HOMEPAGE_KEY, HOMEPAGE_VALUE);
+        capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, getFirefoxOptions());
+        return capabilities;
+    }
 
-        return new FirefoxDriver(profile);
+    private FirefoxOptions getFirefoxOptions() {
+        FirefoxOptions options = new FirefoxOptions();
+        options.setLogLevel(Level.WARNING);
+        return options;
     }
 }
