@@ -4,7 +4,7 @@ import gui.browsercapabilities.firefox.utils.FirefoxManipulator;
 import org.testng.annotations.Test;
 
 /**
- * See more at http://awesome-testing.com/2016/02/selenium-browser-capabilities-explained.html
+ * See more at http://www.awesome-testing.com/2017/09/firefox-selenium-browser-capabilities.html
  */
 public class FirefoxDemoTest extends FirefoxManipulator {
 
