@@ -16,6 +16,10 @@ http://www.awesome-testing.com/2016/10/browsermob-proxy-selenium-network.html
 
 http://www.awesome-testing.com/2017/05/headless-testing-with-google-chrome.html
 
+http://www.awesome-testing.com/2017/09/firefox-selenium-browser-capabilities.html
+
+http://www.awesome-testing.com/2017/09/headless-testing-with-firefox.html
+
 `Rest-Assured related posts:`
 
 http://www.awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html

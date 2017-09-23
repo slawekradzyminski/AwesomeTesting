@@ -6,7 +6,7 @@ import org.fluentlenium.core.annotation.Page;
 import org.testng.annotations.Test;
 
 /**
- * See more at http://www.awesome-testing.com
+ * See more at http://www.awesome-testing.com/2017/09/headless-testing-with-firefox.html
  */
 public class HeadlessFirefoxDemoTest extends FirefoxManipulator {
 
