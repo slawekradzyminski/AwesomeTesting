@@ -12,12 +12,11 @@ import java.util.concurrent.TimeUnit;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * See more at http://awesome-testing.com
+ * See more at http://www.awesome-testing.com/2017/11/automate-your-xss-tests-with-selenium.html
  */
 public class XssGameTest extends XssDisabledChromeConfig {
 
     private static final String MY_CHROME_PATH = "C:\\drivers\\chromedriver.exe";
-
     private static final String XSS_CONTENT = "<script>alert(\"1\");</script>";
 
     @BeforeTest

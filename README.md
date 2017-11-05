@@ -20,6 +20,8 @@ http://www.awesome-testing.com/2017/09/firefox-selenium-browser-capabilities.htm
 
 http://www.awesome-testing.com/2017/09/headless-testing-with-firefox.html
 
+http://www.awesome-testing.com/2017/11/automate-your-xss-tests-with-selenium.html
+
 `Rest-Assured related posts:`
 
 http://www.awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html
@@ -29,6 +31,8 @@ http://www.awesome-testing.com/2017/06/rest-assured-integration-tests-for.html
 `Security posts`
 
 http://www.awesome-testing.com/2017/02/continuous-security-with-owasp.html
+
+http://www.awesome-testing.com/2017/11/automate-your-xss-tests-with-selenium.html
 
 
 
