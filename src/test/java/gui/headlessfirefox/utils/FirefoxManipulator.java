@@ -1,4 +1,4 @@
-package gui.headlessfirefox.firefox.utils;
+package gui.headlessfirefox.utils;
 
 import org.apache.commons.lang3.SystemUtils;
 import org.fluentlenium.adapter.testng.FluentTestNg;

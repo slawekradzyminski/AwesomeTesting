@@ -1,7 +1,7 @@
-package gui.headlessfirefox.firefox.test;
+package gui.headlessfirefox.test;
 
 import gui.browsermobproxy.pages.AwesomeTestingPage;
-import gui.headlessfirefox.firefox.utils.FirefoxManipulator;
+import gui.headlessfirefox.utils.FirefoxManipulator;
 import org.fluentlenium.core.annotation.Page;
 import org.testng.annotations.Test;
 
