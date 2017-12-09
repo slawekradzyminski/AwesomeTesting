@@ -22,11 +22,13 @@ http://www.awesome-testing.com/2017/09/headless-testing-with-firefox.html
 
 http://www.awesome-testing.com/2017/11/automate-your-xss-tests-with-selenium.html
 
-`Rest-Assured related posts:`
+`API test related posts:`
 
 http://www.awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html
 
 http://www.awesome-testing.com/2017/06/rest-assured-integration-tests-for.html
+
+http://www.awesome-testing.com/2017/12/get-rid-of-your-external-dependencies.html
 
 `Security posts`
 

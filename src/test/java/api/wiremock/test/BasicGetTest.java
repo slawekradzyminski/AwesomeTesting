@@ -12,7 +12,7 @@ import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.CoreMatchers.containsString;
 
 /**
- * See more at http://www.awesome-testing.com
+ * See more at http://www.awesome-testing.com/2017/12/get-rid-of-your-external-dependencies.html
  */
 public class BasicGetTest extends WireMockTest {
 

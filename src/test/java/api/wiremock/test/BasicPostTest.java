@@ -11,6 +11,9 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.apache.http.HttpStatus.SC_OK;
 
+/**
+ * See more at http://www.awesome-testing.com/2017/12/get-rid-of-your-external-dependencies.html
+ */
 public class BasicPostTest extends WireMockTest {
 
     @Before

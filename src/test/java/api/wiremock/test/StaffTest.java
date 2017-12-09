@@ -13,6 +13,9 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 
+/**
+ * See more at http://www.awesome-testing.com/2017/12/get-rid-of-your-external-dependencies.html
+ */
 public class StaffTest extends WireMockTest {
 
     private static final String EMPLOYEES = "employees";
