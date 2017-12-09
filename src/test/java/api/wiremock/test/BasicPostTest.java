@@ -30,7 +30,7 @@ public class BasicPostTest extends WireMockTest {
     }
 
     @Test
-    public void ipTest() {
+    public void postTest() {
         given()
                 .contentType(JSON)
                 .header("Accept", JSON.toString())
