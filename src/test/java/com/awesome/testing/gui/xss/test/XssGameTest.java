@@ -1,6 +1,6 @@
 package com.awesome.testing.gui.xss.test;
 
-import com.awesome.testing.gui.introducingfluentlenium.utils.LoadProperties;
+import com.awesome.testing.utils.LoadProperties;
 import com.awesome.testing.gui.xss.pages.XssGameLevelOnePage;
 import com.awesome.testing.gui.xss.utils.XssDisabledChromeConfig;
 import org.apache.commons.lang3.SystemUtils;

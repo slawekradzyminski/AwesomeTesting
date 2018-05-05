@@ -1,4 +1,4 @@
-package com.awesome.testing.gui.introducingfluentlenium.utils;
+package com.awesome.testing.utils;
 
 import java.io.IOException;
 import java.util.Properties;

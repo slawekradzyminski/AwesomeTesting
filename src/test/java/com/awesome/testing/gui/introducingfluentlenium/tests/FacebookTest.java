@@ -2,7 +2,7 @@ package com.awesome.testing.gui.introducingfluentlenium.tests;
 
 import com.awesome.testing.gui.introducingfluentlenium.pages.FacebookLoggedOutPage;
 import com.awesome.testing.gui.introducingfluentlenium.pages.GroupApprovePage;
-import com.awesome.testing.gui.introducingfluentlenium.utils.LoadProperties;
+import com.awesome.testing.utils.LoadProperties;
 import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Before;
