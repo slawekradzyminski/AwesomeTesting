@@ -1,16 +1,16 @@
 package com.awesome.testing.gui.selectors.tests;
 
 import com.awesome.testing.gui.selectors.pages.HomePage;
-import org.fluentlenium.adapter.testng.FluentTestNg;
+import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
 
 /**
  * See more at http://www.awesome-testing.com/2017/05/how-to-find-test-cssselector-using.html
  */
-public class BlogTest extends FluentTestNg {
+public class BlogTest extends FluentTest {
 
     private static final int EXPECTED_NUMBER_OF_POSTS = 5;
 

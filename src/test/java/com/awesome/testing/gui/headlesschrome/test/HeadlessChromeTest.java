@@ -2,8 +2,8 @@ package com.awesome.testing.gui.headlesschrome.test;
 
 import com.awesome.testing.gui.headlesschrome.utils.HeadlessChromeConfig;
 import org.fluentlenium.core.FluentControl;
+import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;

@@ -31,19 +31,19 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>3.5.3</version>
+            <version>3.9.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
-            <version>3.5.3</version>
+            <version>3.9.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.5.3</version>
+            <version>3.9.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.eclipse.jetty</groupId>
@@ -79,38 +79,32 @@
         <dependency>
             <groupId>org.fluentlenium</groupId>
             <artifactId>fluentlenium-core</artifactId>
-            <version>3.3.0</version>
+            <version>3.5.1</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.fluentlenium</groupId>
             <artifactId>fluentlenium-assertj</artifactId>
-            <version>3.3.0</version>
+            <version>3.5.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.fluentlenium</groupId>
-            <artifactId>fluentlenium-testng</artifactId>
-            <version>3.3.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.9.10</version>
+            <artifactId>fluentlenium-junit</artifactId>
+            <version>3.5.1</version>
         </dependency>
 
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>3.0.6</version>
+            <version>3.1.0</version>
         </dependency>
 
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-schema-validator</artifactId>
-            <version>3.0.6</version>
+            <version>3.1.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -129,7 +123,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>22.0</version>
+            <version>25.0-jre</version>
         </dependency>
 
         <!-- This dependency was added to show vulnerabilities on OWASP dependency check report -->
@@ -139,8 +133,6 @@
             <version>3.1</version>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/javax.json/javax.json-api -->
         <dependency>
             <groupId>javax.json</groupId>
             <artifactId>javax.json-api</artifactId>

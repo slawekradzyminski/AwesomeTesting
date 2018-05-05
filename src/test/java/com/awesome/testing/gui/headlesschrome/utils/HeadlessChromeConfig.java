@@ -1,6 +1,6 @@
 package com.awesome.testing.gui.headlesschrome.utils;
 
-import org.fluentlenium.adapter.testng.FluentTestNg;
+import org.fluentlenium.adapter.junit.FluentTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HeadlessChromeConfig extends FluentTestNg {
+public class HeadlessChromeConfig extends FluentTest {
 
     private static final String HEADLESS = "headless";
 

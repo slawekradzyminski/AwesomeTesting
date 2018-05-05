@@ -6,7 +6,7 @@ import com.awesome.testing.gui.browsermobproxy.pages.GoogleSearchResultPage;
 import com.awesome.testing.gui.browsermobproxy.utils.BrowserMobChrome;
 import net.lightbody.bmp.core.har.Har;
 import org.fluentlenium.core.annotation.Page;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;

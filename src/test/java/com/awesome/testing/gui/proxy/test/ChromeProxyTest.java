@@ -1,8 +1,8 @@
 package com.awesome.testing.gui.proxy.test;
 
 import com.awesome.testing.gui.proxy.utils.ChromeProxyConfig;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS;
 
@@ -15,7 +15,7 @@ public class ChromeProxyTest extends ChromeProxyConfig {
 
     private static final String MY_CHROMEDRIVER_PATH = "C:\\drivers\\chromedriver.exe";
 
-    @BeforeTest
+    @Before
     public void setUp() {
         if (IS_OS_WINDOWS) {
             System.setProperty("webdriver.chrome.driver", MY_CHROMEDRIVER_PATH);

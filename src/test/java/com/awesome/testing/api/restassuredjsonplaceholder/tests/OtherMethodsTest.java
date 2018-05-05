@@ -1,8 +1,8 @@
 package com.awesome.testing.api.restassuredjsonplaceholder.tests;
 
-import org.testng.annotations.Test;
 import com.awesome.testing.api.restassuredjsonplaceholder.utils.JsonPlaceholderAPI;
 import com.awesome.testing.api.restassuredjsonplaceholder.utils.User;
+import org.junit.Test;
 
 import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.apache.http.HttpStatus.SC_OK;

@@ -1,7 +1,7 @@
 package com.awesome.testing.gui.browsercapabilities.firefox.test;
 
 import com.awesome.testing.gui.browsercapabilities.firefox.utils.FirefoxManipulator;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 /**
  * See more at http://www.awesome-testing.com/2017/09/firefox-selenium-browser-capabilities.html

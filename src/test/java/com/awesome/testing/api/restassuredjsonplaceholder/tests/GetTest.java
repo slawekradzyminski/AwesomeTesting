@@ -1,7 +1,7 @@
 package com.awesome.testing.api.restassuredjsonplaceholder.tests;
 
-import org.testng.annotations.Test;
 import com.awesome.testing.api.restassuredjsonplaceholder.utils.JsonPlaceholderAPI;
+import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;

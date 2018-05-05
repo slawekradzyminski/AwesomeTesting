@@ -3,7 +3,7 @@ package com.awesome.testing.gui.headlessfirefox.test;
 import com.awesome.testing.gui.browsermobproxy.pages.AwesomeTestingPage;
 import com.awesome.testing.gui.headlessfirefox.utils.FirefoxManipulator;
 import org.fluentlenium.core.annotation.Page;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 /**
  * See more at http://www.awesome-testing.com/2017/09/headless-testing-with-firefox.html

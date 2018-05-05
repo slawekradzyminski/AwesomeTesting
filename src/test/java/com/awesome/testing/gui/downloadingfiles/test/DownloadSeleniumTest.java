@@ -1,10 +1,10 @@
 package com.awesome.testing.gui.downloadingfiles.test;
 
 import com.awesome.testing.gui.downloadingfiles.utils.Request;
-import org.fluentlenium.adapter.testng.FluentTestNg;
+import org.fluentlenium.adapter.junit.FluentTest;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * See more at http://awesome-testing.com/2016/06/how-to-download-files-using-selenium-2.html
  */
-public class DownloadSeleniumTest extends FluentTestNg {
+public class DownloadSeleniumTest extends FluentTest {
 
     private static final String EXPECTED_MD5 = "c3fb273e2843808968d68120121f2c74";
     private static final String FILE_TO_DL_SELECTOR = "ul li a";

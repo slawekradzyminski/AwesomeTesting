@@ -1,18 +1,18 @@
 package com.awesome.testing.gui.headlessfirefox.utils;
 
 import org.apache.commons.lang3.SystemUtils;
-import org.fluentlenium.adapter.testng.FluentTestNg;
+import org.fluentlenium.adapter.junit.FluentTest;
+import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeTest;
 
-public class FirefoxManipulator extends FluentTestNg {
+public class FirefoxManipulator extends FluentTest {
 
     private static final String MY_GECKO_PATH = "C:\\drivers\\geckodriver.exe";
 
-    @BeforeTest
+    @Before
     public void setUp() {
         if (SystemUtils.IS_OS_WINDOWS) {
             System.setProperty("webdriver.gecko.driver", MY_GECKO_PATH);

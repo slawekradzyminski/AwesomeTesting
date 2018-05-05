@@ -1,7 +1,7 @@
 package com.awesome.testing.api.restassuredjsonplaceholder.tests;
 
-import org.testng.annotations.Test;
 import com.awesome.testing.api.restassuredjsonplaceholder.utils.JsonPlaceholderAPI;
+import org.junit.Test;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 

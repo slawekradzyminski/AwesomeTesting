@@ -1,6 +1,6 @@
 package com.awesome.testing.gui.browsercapabilities.chrome.utils;
 
-import org.fluentlenium.adapter.testng.FluentTestNg;
+import org.fluentlenium.adapter.junit.FluentTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 import static java.lang.String.format;
 
-public class ChromeManipulator extends FluentTestNg {
+public class ChromeManipulator extends FluentTest {
 
     private static final String PREFS = "prefs";
 

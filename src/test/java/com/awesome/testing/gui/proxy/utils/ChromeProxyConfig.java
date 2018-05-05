@@ -1,6 +1,7 @@
 package com.awesome.testing.gui.proxy.utils;
 
-import org.fluentlenium.adapter.testng.FluentTestNg;
+import org.fluentlenium.adapter.FluentTestRunnerAdapter;
+import org.fluentlenium.adapter.junit.FluentTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,7 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChromeProxyConfig extends FluentTestNg {
+public class ChromeProxyConfig extends FluentTest {
 
     @Override
     public WebDriver newWebDriver() {

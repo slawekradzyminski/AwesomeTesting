@@ -1,6 +1,8 @@
 package com.awesome.testing.gui.xss.utils;
 
-import org.fluentlenium.adapter.testng.FluentTestNg;
+import org.fluentlenium.adapter.junit.FluentTest;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class XssDisabledChromeConfig extends FluentTestNg {
+public class XssDisabledChromeConfig extends FluentTest {
 
     private static final String DISABLE_XSS_AUDITOR = "--disable-xss-auditor";
 

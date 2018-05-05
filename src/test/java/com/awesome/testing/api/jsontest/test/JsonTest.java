@@ -2,7 +2,7 @@ package com.awesome.testing.api.jsontest.test;
 
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

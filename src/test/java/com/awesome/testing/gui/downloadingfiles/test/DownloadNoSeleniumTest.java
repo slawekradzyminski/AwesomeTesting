@@ -1,7 +1,7 @@
 package com.awesome.testing.gui.downloadingfiles.test;
 
 import com.awesome.testing.gui.downloadingfiles.utils.Request;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
