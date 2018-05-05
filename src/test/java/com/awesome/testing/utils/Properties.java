@@ -1,20 +1,19 @@
 package com.awesome.testing.utils;
 
 import java.io.IOException;
-import java.util.Properties;
 
-public class LoadProperties {
+public class Properties {
 
-    private Properties properties;
+    private java.util.Properties properties;
 
-    public LoadProperties() {
+    public Properties() {
         properties = loadProperties();
     }
 
-    private static Properties loadProperties() {
-        Properties properties = new Properties();
+    private static java.util.Properties loadProperties() {
+        java.util.Properties properties = new java.util.Properties();
         try {
-            properties.load(LoadProperties.class.getResourceAsStream("/user.properties"));
+            properties.load(Properties.class.getResourceAsStream("/user.properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

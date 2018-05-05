@@ -2,7 +2,7 @@ package com.awesome.testing.gui.introducingfluentlenium.tests;
 
 import com.awesome.testing.gui.introducingfluentlenium.pages.FacebookLoggedOutPage;
 import com.awesome.testing.gui.introducingfluentlenium.pages.GroupApprovePage;
-import com.awesome.testing.utils.LoadProperties;
+import com.awesome.testing.utils.Properties;
 import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Before;
@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  */
 public class FacebookTest extends FluentTest {
 
-    private LoadProperties properties = new LoadProperties();
+    private Properties properties = new Properties();
 
     @Page
     private FacebookLoggedOutPage fbLogOutPage;

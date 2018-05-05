@@ -1,6 +1,6 @@
 package com.awesome.testing.gui.xss.test;
 
-import com.awesome.testing.utils.LoadProperties;
+import com.awesome.testing.utils.Properties;
 import com.awesome.testing.gui.xss.pages.XssGameLevelOnePage;
 import com.awesome.testing.gui.xss.utils.XssDisabledChromeConfig;
 import org.apache.commons.lang3.SystemUtils;
@@ -17,7 +17,7 @@ public class XssGameTest extends XssDisabledChromeConfig {
 
     private static final String XSS_CONTENT = "<script>alert(\"1\");</script>";
 
-    private static LoadProperties properties = new LoadProperties();
+    private static Properties properties = new Properties();
 
     @Page
     private XssGameLevelOnePage xssGameLevelOnePage;

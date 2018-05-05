@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class HeadlessFirefoxDemoTest extends FirefoxManipulator {
 
-    private static final int EXPECTED_NUMBER_OF_POSTS = 5;
+    private static final int EXPECTED_NUMBER_OF_POSTS = 3;
 
     @Page
     private AwesomeTestingPage awesomeTestingPage;
