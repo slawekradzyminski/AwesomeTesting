@@ -1,11 +1,13 @@
 package com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.test;
 
 import com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.pages.MainPage;
+import com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.pages.PostPage;
 import com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.pages.SearchResultsPage;
+import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Test;
 
-public class SearchTest extends FluentLeniumTest {
+public class SearchTest extends FluentTest {
 
     @Page
     private MainPage mainPage;
@@ -13,13 +15,20 @@ public class SearchTest extends FluentLeniumTest {
     @Page
     private SearchResultsPage searchResultsPage;
 
+    @Page
+    private PostPage postPage;
+
     @Test
     public void shouldSuccessfullySearchForPosts() {
         mainPage.go();
         mainPage.isAt();
-        mainPage.searchFor("FluentLenium");
+        mainPage.searchFor("public speaking");
 
         searchResultsPage.isAt();
         searchResultsPage.assertThatPostsAreDisplayed();
+        searchResultsPage.clickOnFirstPost();
+
+        postPage.isAt();
+        postPage.checkComments();
     }
 }

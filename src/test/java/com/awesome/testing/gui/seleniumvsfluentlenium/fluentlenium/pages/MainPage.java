@@ -28,7 +28,7 @@ public class MainPage extends FluentPage {
     public SearchResultsPage searchFor(String searchTerm) {
         searchBar.fill().with(searchTerm);
         searchButton.click();
-        return new SearchResultsPage();
+        return newInstance(SearchResultsPage.class);
     }
 
 }

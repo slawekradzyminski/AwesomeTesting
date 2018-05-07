@@ -1,11 +1,11 @@
 package com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.pages;
 
+import static org.fluentlenium.assertj.FluentLeniumAssertions.assertThat;
+
 import org.fluentlenium.core.FluentPage;
 import org.fluentlenium.core.domain.FluentList;
 import org.fluentlenium.core.domain.FluentWebElement;
 import org.openqa.selenium.support.FindBy;
-
-import static org.fluentlenium.assertj.FluentLeniumAssertions.assertThat;
 
 public class SearchResultsPage extends FluentPage {
 
@@ -22,5 +22,11 @@ public class SearchResultsPage extends FluentPage {
 
     public void assertThatPostsAreDisplayed() {
         assertThat(posts).hasSize().greaterThan(0);
+    }
+
+
+    public PostPage clickOnFirstPost() {
+        posts.first().click();
+        return newInstance(PostPage.class);
     }
 }

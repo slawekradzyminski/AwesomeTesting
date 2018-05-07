@@ -23,7 +23,15 @@ public class SearchResultsPage extends PageObject {
     }
 
     public void assertThatPostsAreDisplayed() {
-        List<WebElement> postsTitles = driver.findElements(By.cssSelector("h1"));
+        List<WebElement> postsTitles = driver.findElements(By.cssSelector("h1 a"));
         assertThat(postsTitles).size().isPositive();
     }
+
+    public PostPage clickOnFirstPost() {
+        List<WebElement> posts = driver.findElements(By.cssSelector("h1 a"));
+        posts.get(0).click();
+
+        return new PostPage(driver);
+    }
+
 }
