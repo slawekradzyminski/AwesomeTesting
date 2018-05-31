@@ -1,9 +1,8 @@
 package com.awesome.testing.gui.headlessfirefox.utils;
 
-import com.awesome.testing.utils.Properties;
+import com.awesome.testing.utils.MyProperties;
 import org.apache.commons.lang3.SystemUtils;
 import org.fluentlenium.adapter.junit.FluentTest;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,12 +11,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class FirefoxManipulator extends FluentTest {
 
-    private static Properties properties = new Properties();
+    private static MyProperties myProperties = new MyProperties();
 
     @BeforeClass
     public static void setUp() {
         if (SystemUtils.IS_OS_WINDOWS) {
-            System.setProperty("webdriver.gecko.driver", properties.getProperty("my_gecko_path"));
+            System.setProperty("webdriver.gecko.driver", myProperties.getProperty("my_gecko_path"));
         }
     }
 

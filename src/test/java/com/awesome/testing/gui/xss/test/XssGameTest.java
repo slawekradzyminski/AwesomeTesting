@@ -1,6 +1,6 @@
 package com.awesome.testing.gui.xss.test;
 
-import com.awesome.testing.utils.Properties;
+import com.awesome.testing.utils.MyProperties;
 import com.awesome.testing.gui.xss.pages.XssGameLevelOnePage;
 import com.awesome.testing.gui.xss.utils.XssDisabledChromeConfig;
 import org.apache.commons.lang3.SystemUtils;
@@ -17,7 +17,7 @@ public class XssGameTest extends XssDisabledChromeConfig {
 
     private static final String XSS_CONTENT = "<script>alert(\"1\");</script>";
 
-    private static Properties properties = new Properties();
+    private static MyProperties myProperties = new MyProperties();
 
     @Page
     private XssGameLevelOnePage xssGameLevelOnePage;
@@ -25,7 +25,7 @@ public class XssGameTest extends XssDisabledChromeConfig {
     @BeforeClass
     public static void setUp() {
         if (SystemUtils.IS_OS_WINDOWS) {
-            System.setProperty("webdriver.chrome.driver", properties.getProperty("my_chrome_path"));
+            System.setProperty("webdriver.chrome.driver", myProperties.getProperty("my_chrome_path"));
         }
     }
 

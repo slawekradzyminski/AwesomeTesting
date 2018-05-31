@@ -2,7 +2,7 @@ package com.awesome.testing.gui.introducingfluentlenium.tests;
 
 import com.awesome.testing.gui.introducingfluentlenium.pages.FacebookLoggedOutPage;
 import com.awesome.testing.gui.introducingfluentlenium.pages.GroupApprovePage;
-import com.awesome.testing.utils.Properties;
+import com.awesome.testing.utils.MyProperties;
 import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Before;
@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  */
 public class FacebookTest extends FluentTest {
 
-    private Properties properties = new Properties();
+    private MyProperties myProperties = new MyProperties();
 
     @Page
     private FacebookLoggedOutPage fbLogOutPage;
@@ -31,7 +31,7 @@ public class FacebookTest extends FluentTest {
     @Before
     public void authenticate() {
         fbLogOutPage.go();
-        fbLogOutPage.login(properties.getProperty("email"), properties.getProperty("password"));
+        fbLogOutPage.login(myProperties.getProperty("email"), myProperties.getProperty("password"));
         fbLogOutPage.verifySuccessfulLogin();
     }
 

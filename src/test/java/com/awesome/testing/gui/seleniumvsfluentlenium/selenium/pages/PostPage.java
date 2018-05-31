@@ -17,10 +17,6 @@ public class PostPage extends PageObject {
     @FindBy(id = "comment-editor")
     private WebElement commentsSection;
 
-    @FindBy(name = "commentBody")
-    private WebElement commentBody;
-
-
     public PostPage(WebDriver driver) {
         super(driver);
     }
