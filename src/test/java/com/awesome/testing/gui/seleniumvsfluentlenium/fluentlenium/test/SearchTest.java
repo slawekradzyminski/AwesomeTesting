@@ -3,11 +3,10 @@ package com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.test;
 import com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.pages.MainPage;
 import com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.pages.PostPage;
 import com.awesome.testing.gui.seleniumvsfluentlenium.fluentlenium.pages.SearchResultsPage;
-import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Test;
 
-public class SearchTest extends FluentTest {
+public class SearchTest extends FluentLeniumTest {
 
     @Page
     private MainPage mainPage;

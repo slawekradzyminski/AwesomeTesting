@@ -12,7 +12,7 @@ public class SearchResultsPage extends FluentPage {
     @FindBy(className = "status-msg-wrap")
     private FluentWebElement searchOptionPanel;
 
-    @FindBy(css = "h1")
+    @FindBy(css = "h1 a")
     private FluentList<FluentWebElement> posts;
 
     @Override
