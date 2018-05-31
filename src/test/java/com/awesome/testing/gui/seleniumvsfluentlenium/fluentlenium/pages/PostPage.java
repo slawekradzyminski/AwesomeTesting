@@ -19,9 +19,8 @@ public class PostPage extends FluentPage {
         assertThat(commentsSection).isDisplayed();
     }
 
-    public void checkComments() {
+    public void checkCommentsSectionPresence() {
         switchTo(commentsSection);
         await().atMost(5, TimeUnit.SECONDS).until(commentBody).displayed();
     }
-
 }

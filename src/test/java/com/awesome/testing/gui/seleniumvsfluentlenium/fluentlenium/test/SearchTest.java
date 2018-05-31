@@ -29,6 +29,6 @@ public class SearchTest extends FluentTest {
         searchResultsPage.clickOnFirstPost();
 
         postPage.isAt();
-        postPage.checkComments();
+        postPage.checkCommentsSectionPresence();
     }
 }

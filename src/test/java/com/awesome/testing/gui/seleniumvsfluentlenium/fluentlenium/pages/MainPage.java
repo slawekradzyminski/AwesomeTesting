@@ -30,5 +30,4 @@ public class MainPage extends FluentPage {
         searchButton.click();
         return newInstance(SearchResultsPage.class);
     }
-
 }

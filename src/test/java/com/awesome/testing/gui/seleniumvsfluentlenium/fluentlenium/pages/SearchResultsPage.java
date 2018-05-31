@@ -24,7 +24,6 @@ public class SearchResultsPage extends FluentPage {
         assertThat(posts).hasSize().greaterThan(0);
     }
 
-
     public PostPage clickOnFirstPost() {
         posts.first().click();
         return newInstance(PostPage.class);

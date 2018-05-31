@@ -26,5 +26,4 @@ public class SeleniumTest {
     public void tearDown() {
         driver.close();
     }
-
 }

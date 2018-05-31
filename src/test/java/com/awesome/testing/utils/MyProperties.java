@@ -25,5 +25,4 @@ public class MyProperties {
     public String getProperty(String property) {
         return properties.getProperty(property);
     }
-
 }

@@ -25,7 +25,7 @@ public class PostPage extends PageObject {
         assertThat(commentsSection.isDisplayed()).isTrue();
     }
 
-    public void checkComments() {
+    public void checkCommentsSectionPresence() {
         driver.switchTo().frame(commentsSection);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.name("commentBody")));
     }

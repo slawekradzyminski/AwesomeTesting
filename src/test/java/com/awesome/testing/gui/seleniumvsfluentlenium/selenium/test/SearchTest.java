@@ -10,18 +10,17 @@ public class SearchTest extends SeleniumTest {
     private static final String BLOG = "https://www.awesome-testing.com";
 
     @Test
-    public void shouldSuccessfullySearchForPosts() {
+    public void shouldSuccessfullyFindPostAndDisplayCommentsSection() {
         driver.get(BLOG);
         MainPage mainPage = new MainPage(driver);
         mainPage.isInitialized();
-        mainPage.searchFor("public speaking");
 
-        SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
+        SearchResultsPage searchResultsPage =  mainPage.searchFor("public speaking");
         searchResultsPage.isInitialized();
         searchResultsPage.assertThatPostsAreDisplayed();
 
         PostPage postPage = searchResultsPage.clickOnFirstPost();
         postPage.isInitialized();
-        postPage.checkComments();
+        postPage.checkCommentsSectionPresence();
     }
 }
