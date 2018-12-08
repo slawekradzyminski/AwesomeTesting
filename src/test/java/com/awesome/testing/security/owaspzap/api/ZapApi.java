@@ -14,7 +14,7 @@ public class ZapApi {
 
     private static final String ZAP_ADDRESS = "localhost";
     private static final int ZAP_PORT = 8888;
-    private static final String ZAP_API_KEY = "lh09t01p70pe9v2pr4g5jcjlsd";
+    private static final String ZAP_API_KEY = "YOUR_API_KEY";
 
     private String target;
     private ClientApi api;
