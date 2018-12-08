@@ -1,0 +1,2088 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ZAP Scanning Report</title>
+<style>
+body{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #000;
+  font-size: 13px;
+}
+h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px
+}
+h3{
+  font-size: 16px;
+}
+table{
+  border: none;
+  font-size: 13px;
+}
+td, th {
+  padding: 3px 4px;
+}
+th{
+  font-weight: bold;
+}
+.results th{
+  text-align: left;
+}
+.spacer{
+  margin: 10px;
+}
+.spacer-lg{
+  margin: 40px;
+}
+.indent1{
+  padding: 4px 20px;
+}
+.indent2{
+  padding: 4px 40px;
+}
+.risk-high{
+  background-color: red;
+  color: #FFF;
+}
+.risk-medium{
+  background-color: orange;
+  color: #FFF;
+}
+.risk-low{
+  background-color: yellow;
+  color: #000;
+}
+.risk-info{
+  background-color: blue;
+  color: #FFF;
+}
+.summary th{
+  color: #FFF;
+}
+</style>
+</head>
+<body>
+<h1>
+<img src="data:image/png;base64,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">
+ZAP Scanning Report
+</h1>
+<p>
+
+</p>
+<h3>Summary of Alerts</h3>
+<table width="45%" class="summary">
+<tr bgcolor="#666666">
+<th width="45%" height="24">Risk 
+      Level</th><th width="55%" align="center">Number 
+      of Alerts</th>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="#high">High</a></td><td align="center">2</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="#medium">Medium</a></td><td align="center">4</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="#low">Low</a></td><td align="center">4</td>
+</tr>
+<tr bgcolor="#e8e8e8">
+<td><a href="#info">Informational</a></td><td align="center">0</td>
+</tr>
+</table>
+<div class="spacer-lg"></div>
+<h3>Alert Detail</h3>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-high">
+<th width="20%"><a name="high"></a>High (Medium)</th><th width="80%">Cross Site Scripting (Reflected)</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>Cross-site Scripting (XSS) is an attack technique that involves echoing attacker-supplied code into a user's browser instance. A browser instance can be a standard web browser client, or a browser object embedded in a software product such as the browser within WinAmp, an RSS reader, or an email client. The code itself is usually written in HTML/JavaScript, but may also extend to VBScript, ActiveX, Java, Flash, or any other browser-supported technology.</p><p>When an attacker gets a user's browser to execute his/her code, the code will run within the security context (or zone) of the hosting web site. With this level of privilege, the code has the ability to read, modify and transmit any sensitive data accessible by the browser. A Cross-site Scripted user could have his/her account hijacked (cookie theft), their browser redirected to another location, or possibly shown fraudulent content delivered by the web site they are visiting. Cross-site Scripting attacks essentially compromise the trust relationship between a user and the web site. Applications utilizing browser object instances which load content from the file system may execute code under the local machine zone allowing for system compromise.</p><p></p><p>There are three types of Cross-site Scripting attacks: non-persistent, persistent and DOM-based.</p><p>Non-persistent attacks and DOM-based attacks require a user to either visit a specially crafted link laced with malicious code, or visit a malicious web page containing a web form, which when posted to the vulnerable site, will mount the attack. Using a malicious form will oftentimes take place when the vulnerable resource only accepts HTTP POST requests. In such a case, the form can be submitted automatically, without the victim's knowledge (e.g. by using JavaScript). Upon clicking on the malicious link or submitting the malicious form, the XSS payload will get echoed back and will get interpreted by the user's browser and execute. Another technique to send almost arbitrary requests (GET and POST) is by using an embedded client, such as Adobe Flash.</p><p>Persistent attacks occur when the malicious code is submitted to a web site where it's stored for a period of time. Examples of an attacker's favorite targets often include message board posts, web mail messages, and web chat software. The unsuspecting user is not required to interact with any additional site/link (e.g. an attacker site or a malicious link sent via email), just simply view the web page containing the code.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/search.jsp?q=%3C%2Ffont%3E%3Cscript%3Ealert%281%29%3B%3C%2Fscript%3E%3Cfont%3E</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">q</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">&lt;/font&gt;&lt;script&gt;alert(1);&lt;/script&gt;&lt;font&gt;</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">&lt;/font&gt;&lt;script&gt;alert(1);&lt;/script&gt;&lt;font&gt;</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Phase: Architecture and Design</p><p>Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.</p><p>Examples of libraries and frameworks that make it easier to generate properly encoded output include Microsoft's Anti-XSS library, the OWASP ESAPI Encoding module, and Apache Wicket.</p><p></p><p>Phases: Implementation; Architecture and Design</p><p>Understand the context in which your data will be used and the encoding that will be expected. This is especially important when transmitting data between different components, or when generating outputs that can contain multiple encodings at the same time, such as web pages or multi-part mail messages. Study all expected communication protocols and data representations to determine the required encoding strategies.</p><p>For any data that will be output to another web page, especially any data that was received from external inputs, use the appropriate encoding on all non-alphanumeric characters.</p><p>Consult the XSS Prevention Cheat Sheet for more details on the types of encoding and escaping that are needed.</p><p></p><p>Phase: Architecture and Design</p><p>For any security checks that are performed on the client side, ensure that these checks are duplicated on the server side, in order to avoid CWE-602. Attackers can bypass the client-side checks by modifying values after the checks have been performed, or by changing the client to remove the client-side checks entirely. Then, these modified values would be submitted to the server.</p><p></p><p>If available, use structured mechanisms that automatically enforce the separation between data and code. These mechanisms may be able to provide the relevant quoting, encoding, and validation automatically, instead of relying on the developer to provide this capability at every point where output is generated.</p><p></p><p>Phase: Implementation</p><p>For every web page that is generated, use and specify a character encoding such as ISO-8859-1 or UTF-8. When an encoding is not specified, the web browser may choose a different encoding by guessing which encoding is actually being used by the web page. This can cause the web browser to treat certain sequences as special, opening up the client to subtle XSS attacks. See CWE-116 for more mitigations related to encoding/escaping.</p><p></p><p>To help mitigate XSS attacks against the user's session cookie, set the session cookie to be HttpOnly. In browsers that support the HttpOnly feature (such as more recent versions of Internet Explorer and Firefox), this attribute can prevent the user's session cookie from being accessible to malicious client-side scripts that use document.cookie. This is not a complete solution, since HttpOnly is not supported by all browsers. More importantly, XMLHTTPRequest and other powerful browser technologies provide read access to HTTP headers, including the Set-Cookie header in which the HttpOnly flag is set.</p><p></p><p>Assume all input is malicious. Use an "accept known good" input validation strategy, i.e., use a whitelist of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does. Do not rely exclusively on looking for malicious or malformed inputs (i.e., do not rely on a blacklist). However, blacklists can be useful for detecting potential attacks or determining which inputs are so malformed that they should be rejected outright.</p><p></p><p>When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules. As an example of business rule logic, "boat" may be syntactically valid because it only contains alphanumeric characters, but it is not valid if you are expecting colors such as "red" or "blue."</p><p></p><p>Ensure that you perform input validation at well-defined interfaces within the application. This will help protect the application even if a component is reused or moved elsewhere.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://projects.webappsec.org/Cross-Site-Scripting</p><p>http://cwe.mitre.org/data/definitions/79.html</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">79</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">8</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">1</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-high">
+<th width="20%"><a name="high"></a>High (Medium)</th><th width="80%">SQL Injection</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>SQL injection may be possible.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">price</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">4.7" AND "1"="1</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Do not trust client side input, even if there is client side validation in place.  </p><p>In general, type check all data on the server side.</p><p>If the application uses JDBC, use PreparedStatement or CallableStatement, with parameters passed by '?'</p><p>If the application uses ASP, use ADO Command Objects with strong type checking and parameterized queries.</p><p>If database Stored Procedures can be used, use them.</p><p>Do *not* concatenate strings into queries in the stored procedure, or use 'exec', 'exec immediate', or equivalent functionality!</p><p>Do not create dynamic SQL queries using simple string concatenation.</p><p>Escape all data received from the client.</p><p>Apply a 'whitelist' of allowed characters, or a 'blacklist' of disallowed characters in user input.</p><p>Apply the principle of least privilege by using the least privileged database user possible.</p><p>In particular, avoid using the 'sa' or 'db-owner' database users. This does not eliminate SQL injection, but minimizes its impact.</p><p>Grant the minimum database access that is necessary for the application.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>The page results were successfully manipulated using the boolean conditions [4.7" AND "1"="1] and [4.7" AND "1"="2]</p><p>The parameter value being modified was NOT stripped from the HTML output for the purposes of the comparison</p><p>Data was returned for the original parameter.</p><p>The vulnerability was detected by successfully restricting the data originally returned, by manipulating the parameter</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>https://www.owasp.org/index.php/Top_10_2010-A1</p><p>https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">89</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">19</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">1</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-medium">
+<th width="20%"><a name="medium"></a>Medium (Medium)</th><th width="80%">Buffer Overflow</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>Buffer overflow errors are characterized by the overwriting of memory spaces of the background web process, which should have never been modified intentionally or unintentionally. Overwriting values of the IP (Instruction Pointer), BP (Base Pointer) and other registers causes exceptions, segmentation faults, and other process errors to occur. Usually these errors end execution of the application in an unexpected way. </p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_23</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2463
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_2</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2422
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_24</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2409
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_2</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2395
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_20</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2504
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2409
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_8</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2532
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_5</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2558
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2463
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_5</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2381
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_10</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2532
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_12</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2504
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_4</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2367
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_31</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2354
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_26</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2340
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_22</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2558
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_19</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2504
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_6</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2463
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_25</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2532
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">quantity_13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Attack</td><td width="80%">POST http://localhost:8080/bodgeit/basket.jsp HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 2367
+Referer: http://localhost:8080/bodgeit/basket.jsp
+Cookie: b_id=582; JSESSIONID=2A72DE3A7DEBBFB77F8ED48FC85734A6
+Host: localhost:8080
+
+</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">530</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Rewrite the background program using proper return length checking.  This will require a recompile of the background executable.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>Potential Buffer Overflow.  The script closed the connection and threw a 500 Internal Server Error</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>https://www.owasp.org/index.php/Buffer_overflow_attack</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">120</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">7</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">1</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-medium">
+<th width="20%"><a name="medium"></a>Medium (Medium)</th><th width="80%">X-Frame-Options Header Not Set</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>X-Frame-Options header is not included in the HTTP response to protect against 'ClickJacking' attacks.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/score.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/advanced.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=30</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/contact.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=7</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=6</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=9</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=8</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/register.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=2</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/admin.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/home.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=5</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=4</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=3</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=19</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?typeid=1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?typeid=2</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">57</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Most modern Web browsers support the X-Frame-Options HTTP header. Ensure it's set on all web pages returned by your site (if you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. ALLOW-FROM allows specific websites to frame the web page in supported web browsers).</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-medium">
+<th width="20%"><a name="medium"></a>Medium (Medium)</th><th width="80%">Application Error Disclosure</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/advanced.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">HTTP/1.1 500 Internal Server Error</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p></p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">200</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-medium">
+<th width="20%"><a name="medium"></a>Medium (Medium)</th><th width="80%">X-Frame-Options Header Not Set</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>X-Frame-Options header is not included in the HTTP response to protect against 'ClickJacking' attacks.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.gstatic.com/chrome/intelligence/assist/ranker/models/translate/2017/03/translate_ranker_model_20170329.pb.bin</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Frame-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Most modern Web browsers support the X-Frame-Options HTTP header. Ensure it's set on all web pages returned by your site (if you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. ALLOW-FROM allows specific websites to frame the web page in supported web browsers).</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-low">
+<a name="low"></a><th width="20%">Low (Medium)</th><th width="80%">Web Browser XSS Protection Not Enabled</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>Web Browser XSS Protection is not enabled, or is disabled by the configuration of the 'X-XSS-Protection' HTTP response header on the web server</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?typeid=3</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/login.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?typeid=4</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/search.jsp?q=ZAP</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?typeid=5</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/contact.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?typeid=6</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/search.jsp?q=test</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=29</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=17</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=18</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=19</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?typeid=1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?typeid=2</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/admin.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=24</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=12</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/register.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/about.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-XSS-Protection</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">59</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Ensure that the web browser's XSS filter is enabled, by setting the X-XSS-Protection HTTP response header to '1'.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>The X-XSS-Protection HTTP response header allows the web server to enable or disable the web browser's XSS protection mechanism. The following values would attempt to enable it: </p><p>X-XSS-Protection: 1; mode=block</p><p>X-XSS-Protection: 1; report=http://www.example.com/xss</p><p>The following values would disable it:</p><p>X-XSS-Protection: 0</p><p>The X-XSS-Protection HTTP response header is currently supported on Internet Explorer, Chrome and Safari (WebKit).</p><p>Note that this alert is only raised if the response body could potentially contain an XSS payload (with a text-based content type, with a non-zero length).</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet</p><p>https://blog.veracode.com/2014/03/guidelines-for-setting-security-headers/</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">933</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">14</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-low">
+<a name="low"></a><th width="20%">Low (Medium)</th><th width="80%">X-Content-Type-Options Header Missing</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=28</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=27</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=26</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=14</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=24</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=12</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=25</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/advanced.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/login.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">POST</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=11</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=23</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/about.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=22</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=10</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/images/154.png</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=21</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/product.jsp?prodid=20</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">X-Content-Type-Options</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">65</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Other information</td><td width="80%"><p>This issue still applies to error type pages (401, 403, 500, etc) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At "High" threshold this scanner will not alert on client or server error responses.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://msdn.microsoft.com/en-us/library/ie/gg622941%28v=vs.85%29.aspx</p><p>https://www.owasp.org/index.php/List_of_useful_HTTP_headers</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">15</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-low">
+<a name="low"></a><th width="20%">Low (Medium)</th><th width="80%">Cookie No HttpOnly Flag</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>A cookie has been set without the HttpOnly flag, which means that the cookie can be accessed by JavaScript. If a malicious script can be run on this page then the cookie will be accessible and can be transmitted to another site. If this is a session cookie then session hijacking may be possible.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">http://localhost:8080/bodgeit/basket.jsp</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">b_id</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">Set-Cookie: b_id</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Ensure that the HttpOnly flag is set for all cookies.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>http://www.owasp.org/index.php/HttpOnly</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">16</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+<div class="spacer"></div>
+<table width="100%" class="results">
+  
+  
+  
+<tr height="24" class="risk-low">
+<a name="low"></a><th width="20%">Low (Medium)</th><th width="80%">Incomplete or No Cache-control and Pragma HTTP Header Set</th>
+</tr>
+  
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Description</td><td width="80%"><p>The cache-control and pragma HTTP header have not been set properly or are missing allowing the browser and proxies to cache content.</p></td>
+</tr>
+<TR vAlign="top">
+<TD colspan="2"></TD>
+</TR>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent1">URL</td><td width="80%">https://www.gstatic.com/chrome/intelligence/assist/ranker/models/translate/2017/03/translate_ranker_model_20170329.pb.bin</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Method</td><td width="80%">GET</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Parameter</td><td width="80%">Cache-Control</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%" class="indent2">Evidence</td><td width="80%">public, max-age=31536000</td>
+</tr>
+  
+  
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Instances</td><td width="80%">1</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Solution</td><td width="80%"><p>Whenever possible ensure the cache-control HTTP header is set with no-cache, no-store, must-revalidate; and that the pragma HTTP header is set with no-cache.</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Reference</td><td width="80%"><p>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Web_Content_Caching</p></td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">CWE Id</td><td width="80%">525</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">WASC Id</td><td width="80%">13</td>
+</tr>
+  
+<tr bgcolor="#e8e8e8">
+<td width="20%">Source ID</td><td width="80%">3</td>
+</tr>
+
+</table>
+</body>
+</html>
