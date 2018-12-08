@@ -1,8 +1,6 @@
-package com.awesome.testing.gui.xss.utils;
+package com.awesome.testing.security.xss.utils;
 
 import org.fluentlenium.adapter.junit.FluentTest;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

@@ -1,8 +1,8 @@
-package com.awesome.testing.gui.xss.test;
+package com.awesome.testing.security.xss.test;
 
 import com.awesome.testing.utils.MyProperties;
-import com.awesome.testing.gui.xss.pages.XssGameLevelOnePage;
-import com.awesome.testing.gui.xss.utils.XssDisabledChromeConfig;
+import com.awesome.testing.security.xss.pages.XssGameLevelOnePage;
+import com.awesome.testing.security.xss.utils.XssDisabledChromeConfig;
 import org.apache.commons.lang3.SystemUtils;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.BeforeClass;

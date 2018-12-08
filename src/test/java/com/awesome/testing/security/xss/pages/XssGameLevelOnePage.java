@@ -1,4 +1,4 @@
-package com.awesome.testing.gui.xss.pages;
+package com.awesome.testing.security.xss.pages;
 
 import org.fluentlenium.core.FluentPage;
 import org.fluentlenium.core.annotation.PageUrl;
