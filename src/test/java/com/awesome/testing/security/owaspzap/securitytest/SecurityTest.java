@@ -1,4 +1,4 @@
-package com.awesome.testing.security.owaspzap.apietest;
+package com.awesome.testing.security.owaspzap.securitytest;
 
 import com.awesome.testing.security.owaspzap.api.ZapApi;
 import com.awesome.testing.security.owaspzap.zap.Zap;
@@ -7,7 +7,7 @@ import org.zaproxy.clientapi.core.ClientApiException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ApiTest {
+public class SecurityTest {
 
     private static final String TARGET = "http://localhost:8080/bodgeit";
 
