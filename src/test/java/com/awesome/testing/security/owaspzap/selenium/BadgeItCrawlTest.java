@@ -8,7 +8,7 @@ import org.fluentlenium.core.annotation.Page;
 import org.junit.Test;
 
 
-public class ZapScanTest extends ChromeProxyConfig {
+public class BadgeItCrawlTest extends ChromeProxyConfig {
 
     private static final String USERNAME = "AwesomeTesting@blogspot.com";
     private static final String PASSWORD = "AwesomeTesting";
