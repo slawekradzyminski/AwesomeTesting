@@ -59,7 +59,7 @@ public class JavascriptErrorsInChrome extends FluentTest {
             for (LogEntry logEntry: logEntries) {
                 System.out.println("Found error in logs: " + logEntry.getMessage() );
             }
-            fail("Console error found");
+            fail(errorLogs.size() + " Console error found");
         }
     }
 
