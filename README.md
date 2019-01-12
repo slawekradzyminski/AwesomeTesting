@@ -17,7 +17,7 @@
 - [Best Software Testing books](https://www.awesome-testing.com/2017/04/best-software-testing-books.html)
 - [Learning Software Testing Checklist - 2017 edition](https://www.awesome-testing.com/2017/03/learning-software-testing-checklist.html)
 - [Mentorship - how to skyrocket your testing career](https://www.awesome-testing.com/2017/02/mentorship-how-to-skyrocket-your.html)
-- [How to start learning test automation](https://www.awesome-testing.com/2016/08/how-to-start-learning-test-automation.htmll)
+- [How to start learning test automation](https://www.awesome-testing.com/2016/08/how-to-start-learning-test-automation.html)
 - [How to become a software tester](https://www.awesome-testing.com/2016/06/how-to-become-software-tester.html)
 - [How to nail job testing interview](https://www.awesome-testing.com/2016/05/how-to-nail-testing-job-interview.html)
 - [Learing pathways for testers](https://www.awesome-testing.com/2016/03/learning-pathways-for-testers.html)
