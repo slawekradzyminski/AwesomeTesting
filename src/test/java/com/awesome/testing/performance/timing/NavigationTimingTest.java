@@ -7,6 +7,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static com.awesome.testing.performance.timing.PerformanceEvent.LOAD_EVENT_END;
+import static com.awesome.testing.performance.timing.PerformanceEvent.NAVIGATION_START;
+
 public class NavigationTimingTest extends FluentTest {
 
     private static final String MY_CHROMEDRIVER_PATH =
@@ -21,15 +24,18 @@ public class NavigationTimingTest extends FluentTest {
     }
 
     @Test
-    public void testBMICalculator_Perf() throws Exception {
+    public void testBMICalculator_Perf() {
         goTo(awesomeTestingPage);
-        long loadEventEnd = executeScript("return window.performance.timing.loadEventEnd;")
-                .getLongResult();
+        long loadEventEnd = getEventValue(LOAD_EVENT_END);
+        long navigationStart = getEventValue(NAVIGATION_START);
 
-        long navigationStart = executeScript("return window.performance.timing.navigationStart;")
-                .getLongResult();
+        System.out.println(
+                "Page Load Time is " + (loadEventEnd - navigationStart) / 1000 + " seconds.");
+    }
 
-        System.out.println("Page Load Time is " + (loadEventEnd - navigationStart) / 1000 + " seconds.");
+    private long getEventValue(PerformanceEvent event) {
+        String script = String.format("return window.performance.timing.%s;", event);
+        return executeScript(script).getLongResult();
     }
 
 }
