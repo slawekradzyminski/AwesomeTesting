@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static com.awesome.testing.performance.timing.PerformanceEvent.LOAD_EVENT_END;
 import static com.awesome.testing.performance.timing.PerformanceEvent.NAVIGATION_START;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class NavigationTimingTest extends FluentTest {
 
@@ -24,13 +25,19 @@ public class NavigationTimingTest extends FluentTest {
     }
 
     @Test
-    public void testBMICalculator_Perf() {
+    public void loadTimeTest() {
         goTo(awesomeTestingPage);
         long loadEventEnd = getEventValue(LOAD_EVENT_END);
         long navigationStart = getEventValue(NAVIGATION_START);
 
-        System.out.println(
-                "Page Load Time is " + (loadEventEnd - navigationStart) / 1000 + " seconds.");
+        assertThat(getLoadTimeInSeconds(loadEventEnd, navigationStart)).isLessThanOrEqualTo(3);
+    }
+
+    private long getLoadTimeInSeconds(long loadEventEnd, long navigationStart) {
+        long loadTimeInSeconds = (loadEventEnd - navigationStart) / 1000;
+        String logBody = String.format("Page Load Time is %s seconds.", loadTimeInSeconds);
+        System.out.println(logBody);
+        return loadTimeInSeconds;
     }
 
     private long getEventValue(PerformanceEvent event) {
