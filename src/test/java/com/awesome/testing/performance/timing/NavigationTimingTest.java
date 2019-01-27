@@ -5,7 +5,7 @@ import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 import static com.awesome.testing.performance.timing.PerformanceEvent.LOAD_EVENT_END;
 import static com.awesome.testing.performance.timing.PerformanceEvent.NAVIGATION_START;
@@ -13,15 +13,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class NavigationTimingTest extends FluentTest {
 
-    private static final String MY_CHROMEDRIVER_PATH =
-            "C:\\drivers\\chromedriver.exe";
+    private static final String MY_EDGEDRIVER_PATH =
+            "C:\\drivers\\MicrosoftWebDriver.exe";
     @Page
     private AwesomeTestingPage awesomeTestingPage;
 
     @Override
     public WebDriver newWebDriver() {
-        System.setProperty("webdriver.chrome.driver", MY_CHROMEDRIVER_PATH);
-        return new ChromeDriver();
+        System.setProperty("webdriver.edge.driver", MY_EDGEDRIVER_PATH);
+        return new EdgeDriver();
     }
 
     @Test
