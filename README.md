@@ -44,6 +44,7 @@
 - [Introducing FluentLenium - Selenium waiting game](https://www.awesome-testing.com/2016/04/introducing-fluentlenium-2-selenium.html)
 - [Selenium Browser Capabilities explained](https://www.awesome-testing.com/2016/02/selenium-browser-capabilities-explained.html)
 - [Introducing FluentLenium](https://www.awesome-testing.com/2016/01/introducing-fluentlenium-1.html)
+- [Disabling JavaScript using Selenium](https://www.awesome-testing.com/2019/03/disabling-javascript-using-selenium.html)
 ## Testing Thoughts
 - [How to get a first job as a software tester?](https://www.awesome-testing.com/2018/08/how-to-get-first-job-as-software-tester.html)
 - [My road to public speaking + slides from Engineering Productivity talk](https://www.awesome-testing.com/2018/04/my-road-to-public-speaking-slides-from.html)
