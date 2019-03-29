@@ -17,8 +17,7 @@ public class MainPage extends FluentPage {
     @FindBy(css = "nav")
     private Header header;
 
-    @Override
-    public void isAt() {
+    public void assertThatPageIsLoaded() {
         assertThat(mainContent).isDisplayed();
     }
 

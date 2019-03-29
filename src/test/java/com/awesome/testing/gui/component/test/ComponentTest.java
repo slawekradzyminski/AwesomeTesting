@@ -12,6 +12,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ComponentTest extends FluentTest {
 
+    private static final Dimension FULL_HD = new Dimension(1920, 1080);
+
     @Page
     private QuickStartPage quickStartPage;
 
@@ -20,7 +22,7 @@ public class ComponentTest extends FluentTest {
 
     @Before
     public void setUp() {
-        getDriver().manage().window().setSize(new Dimension(1920, 1080));
+        getDriver().manage().window().setSize(FULL_HD);
     }
 
     @Override
@@ -30,20 +32,33 @@ public class ComponentTest extends FluentTest {
 
     @Test
     public void quickStartLink() {
-        mainPage.go().isAt();
-        mainPage.getHeader().clickQuickstartLink().isAt();
+        mainPage.go();
+        mainPage.assertThatPageIsLoaded();
+
+        mainPage.getHeader()
+                .clickQuickstartLink()
+                .assertThatPageIsLoaded();
     }
 
     @Test
     public void homeLink() {
-        quickStartPage.go().isAt();
-        quickStartPage.getHeader().clickHomeLink().isAt();
+        quickStartPage.go();
+        quickStartPage.assertThatPageIsLoaded();
+
+        quickStartPage.getHeader()
+                .clickHomeLink()
+                .assertThatPageIsLoaded();
     }
 
     @Test
     public void shouldShowSlawomir() {
-        mainPage.go().isAt();
-        mainPage.getHeader().clickAboutLink().verifySlawomirPresence();
+        mainPage.go();
+        mainPage.assertThatPageIsLoaded();
+
+        mainPage.getHeader()
+                .clickAboutLink()
+                .assertThatPageIsLoaded()
+                .verifySlawomirPresence();
     }
 
 }

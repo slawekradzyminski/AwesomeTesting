@@ -13,9 +13,9 @@ public class AboutPage extends FluentPage {
     @FindBy(className = "username")
     private FluentList<FluentWebElement> contributors;
 
-    @Override
-    public void isAt() {
+    public AboutPage assertThatPageIsLoaded() {
         assertThat(contributors).hasSize().greaterThan(0);
+        return this;
     }
 
     public void verifySlawomirPresence() {
