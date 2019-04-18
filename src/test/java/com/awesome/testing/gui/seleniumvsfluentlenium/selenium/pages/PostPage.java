@@ -2,7 +2,7 @@ package com.awesome.testing.gui.seleniumvsfluentlenium.selenium.pages;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -21,18 +21,18 @@ public class PostPage extends PageObject {
         super(driver);
     }
 
-    public void isInitialized() {
+    public PostPage isInitialized() {
         assertThat(commentsSection.isDisplayed()).isTrue();
+        return this;
     }
 
-    public void checkCommentsSectionPresence() {
-        driver.switchTo().frame(commentsSection);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.name("commentBody")));
+    public void assertThatCommentSectionIsDisplayed() {
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("comments")));
     }
 
     private Wait<WebDriver> wait = new FluentWait<>(driver)
-            .withTimeout(5, TimeUnit.SECONDS)
-            .pollingEvery(500, TimeUnit.MILLISECONDS)
+            .withTimeout(Duration.ofSeconds(5))
+            .pollingEvery(Duration.ofMillis(500))
             .ignoring(NoSuchElementException.class)
             .withMessage("Oops, element didn't appear!");
 

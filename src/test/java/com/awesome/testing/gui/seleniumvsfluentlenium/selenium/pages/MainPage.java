@@ -21,8 +21,9 @@ public class MainPage extends PageObject {
         super(driver);
     }
 
-    public void isInitialized() {
+    public MainPage isInitialized() {
         assertThat(post.isDisplayed()).isTrue();
+        return this;
     }
 
     public SearchResultsPage searchFor(String searchTerm) {

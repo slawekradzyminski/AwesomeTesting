@@ -21,6 +21,6 @@ public class SearchTest extends SeleniumTest {
 
         PostPage postPage = searchResultsPage.clickOnFirstPost();
         postPage.isInitialized();
-        postPage.checkCommentsSectionPresence();
+        postPage.assertThatCommentSectionIsDisplayed();
     }
 }

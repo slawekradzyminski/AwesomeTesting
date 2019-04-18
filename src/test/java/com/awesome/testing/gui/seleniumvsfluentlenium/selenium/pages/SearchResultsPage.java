@@ -18,13 +18,15 @@ public class SearchResultsPage extends PageObject {
         super(driver);
     }
 
-    public void isInitialized() {
+    public SearchResultsPage isInitialized() {
         assertThat(searchOptionPanel.isDisplayed()).isTrue();
+        return this;
     }
 
-    public void assertThatPostsAreDisplayed() {
+    public SearchResultsPage assertThatPostsAreDisplayed() {
         List<WebElement> postsTitles = driver.findElements(By.cssSelector("h1 a"));
         assertThat(postsTitles).size().isPositive();
+        return this;
     }
 
     public PostPage clickOnFirstPost() {
