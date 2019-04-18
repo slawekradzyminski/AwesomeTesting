@@ -32,6 +32,7 @@
 - [Automated testing vs manual testing - security perspective](https://www.awesome-testing.com/2017/03/automated-testing-vs-manual-testing.html)
 - [Continuous Security with OWASP Dependency Check](https://www.awesome-testing.com/2017/02/continuous-security-with-owasp.html)
 ## Selenium
+- [Headless Browser Testing with Selenium](https://www.awesome-testing.com/2019/04/headless-browser-testing-with-selenium.html)
 - [Adding console error log verification to Selenium tests using Chrome](https://www.awesome-testing.com/2019/01/adding-console-error-log-verification.html)
 - [Selenium vs FluentLenium](https://www.awesome-testing.com/2018/05/selenium-vs-fluentlenium.html)
 - [Headless testing with Firefox](https://www.awesome-testing.com/2017/09/headless-testing-with-firefox.html)

@@ -27,9 +27,9 @@ public class MainPage extends PageObject {
     }
 
     public SearchResultsPage searchFor(String searchTerm) {
-        this.searchBar.clear();
-        this.searchBar.sendKeys(searchTerm);
-        this.searchButton.click();
+        searchBar.clear();
+        searchBar.sendKeys(searchTerm);
+        searchButton.click();
         return new SearchResultsPage(driver);
     }
 
