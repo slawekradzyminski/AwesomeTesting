@@ -7,6 +7,10 @@ import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.RunnerException;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 import java.util.stream.LongStream;
@@ -56,6 +60,17 @@ public class BenchMark {
         return LongStream.rangeClosed(1, N)
                 .parallel()
                 .reduce(0L, Long::sum);
+    }
+
+    public static void main(String[] args) throws RunnerException {
+        Options opt = new OptionsBuilder()
+                .include(BenchMark.class.getSimpleName())
+                .warmupIterations(5)
+                .measurementIterations(5)
+                .forks(1)
+                .build();
+
+        new Runner(opt).run();
     }
 
 }
