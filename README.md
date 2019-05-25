@@ -25,6 +25,7 @@
 ## Performance
 - [Five minutes performance report with Google Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with.html)
 - [Measuring page load times using Selenium](https://www.awesome-testing.com/2019/01/measuring-page-load-times-using-selenium.html)
+- [Performance testing (benchmarking) Java code with JMH](https://www.awesome-testing.com/2019/05/performance-testing-benchmarking-java.html)
 ## Security
 - [Continuous Security with OWASP ZAP](https://www.awesome-testing.com/2018/12/continuous-security-with-owasp-zap.html)
 - [Continuous Security with Find-Sec-Bugs](https://www.awesome-testing.com/2018/11/continuous-security-with-find-sec-bugs.html)
