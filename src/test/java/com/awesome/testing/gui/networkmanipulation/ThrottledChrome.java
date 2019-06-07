@@ -1,8 +1,7 @@
-package com.awesome.testing.gui.browsermobproxy.utils;
+package com.awesome.testing.gui.networkmanipulation;
 
 import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;
-import net.lightbody.bmp.proxy.CaptureType;
 import org.fluentlenium.adapter.junit.FluentTest;
 import org.junit.After;
 import org.junit.Before;
@@ -13,17 +12,26 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.net.Inet4Address;
 import java.net.UnknownHostException;
+import java.util.concurrent.TimeUnit;
 
-public class BrowserMobChrome extends FluentTest {
+public class ThrottledChrome extends FluentTest {
 
     private static final int BROWSER_MOB_PROXY_PORT = 9191;
+    private static final String USER_AGENT = "User-Agent";
 
     protected BrowserMobProxyServer server = new BrowserMobProxyServer();
 
     @Before
     public void startBMP() {
         server.start(BROWSER_MOB_PROXY_PORT);
-        server.setHarCaptureTypes(CaptureType.getHeaderCaptureTypes());
+        server.setWriteBandwidthLimit(1000);
+        server.setLatency(300, TimeUnit.MILLISECONDS);
+
+        server.addRequestFilter((request, contents, messageInfo) -> {
+            request.headers().remove(USER_AGENT);
+            request.headers().add(USER_AGENT, "Bananabot/1.0");
+            return null;
+        });
     }
 
     @Override
@@ -33,11 +41,11 @@ public class BrowserMobChrome extends FluentTest {
 
     private ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-        options.setProxy(getChromeProxySettings());
+        options.setProxy(getProxy());
         return options;
     }
 
-    private Proxy getChromeProxySettings() {
+    private Proxy getProxy() {
         Proxy seleniumProxy = ClientUtil.createSeleniumProxy(server);
         String hostIp = null;
         try {

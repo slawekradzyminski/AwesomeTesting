@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @PageUrl("http://www.awesome-testing.com")
 public class AwesomeTestingPage extends FluentPage {
 
-    @FindBy(css = "[alt='Awesome Testing']")
+    @FindBy(css = "[alt='Software testing Blog – Awesome Testing']")
     private FluentWebElement logo;
 
     @FindBy(css = "h1.post-title")

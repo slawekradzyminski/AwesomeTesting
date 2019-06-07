@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class HarToJsonConverter {
@@ -24,7 +25,7 @@ public class HarToJsonConverter {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream("filename.txt"), "utf-8"))) {
+                new FileOutputStream("filename.txt"), StandardCharsets.UTF_8))) {
             writer.write(gson.toJson(harEntryList));
         }
     }
