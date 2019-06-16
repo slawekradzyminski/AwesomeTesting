@@ -24,14 +24,12 @@ public class ThrottledChrome extends FluentTest {
     @Before
     public void startBMP() {
         server.start(BROWSER_MOB_PROXY_PORT);
-        server.setWriteBandwidthLimit(1000);
+        server.setReadBandwidthLimit(1000000);
+        server.setWriteBandwidthLimit(1000000);
         server.setLatency(300, TimeUnit.MILLISECONDS);
 
-        server.addRequestFilter((request, contents, messageInfo) -> {
-            request.headers().remove(USER_AGENT);
-            request.headers().add(USER_AGENT, "Bananabot/1.0");
-            return null;
-        });
+        server.removeHeader(USER_AGENT);
+        server.addHeader(USER_AGENT, "Throttled Chrome Selenium Test");
     }
 
     @Override
