@@ -48,6 +48,7 @@
 - [Introducing FluentLenium](https://www.awesome-testing.com/2016/01/introducing-fluentlenium-1.html)
 - [Disabling JavaScript using Selenium](https://www.awesome-testing.com/2019/03/disabling-javascript-using-selenium.html)
 - [Selenium Page Object Pattern - how to handle common components?](https://www.awesome-testing.com/2019/03/selenium-page-object-pattern-how-to.html)
+- [Throttling network is Selenium tests](https://www.awesome-testing.com/2019/06/throttling-network-in-selenium-tests.html)
 ## Testing Thoughts
 - [How to get a first job as a software tester?](https://www.awesome-testing.com/2018/08/how-to-get-first-job-as-software-tester.html)
 - [My road to public speaking + slides from Engineering Productivity talk](https://www.awesome-testing.com/2018/04/my-road-to-public-speaking-slides-from.html)
