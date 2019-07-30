@@ -1,5 +1,8 @@
 package com.awesome.testing.api.juice.confidential;
 
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
+
 public class RegisterDto {
 
     private String email;
@@ -34,5 +37,42 @@ public class RegisterDto {
 
     public SecurityQuestionDto getSecurityQuestionDto() {
         return securityQuestionDto;
+    }
+
+    class SecurityQuestionDto {
+
+        private int id;
+        private String securityQuestion;
+        private String createdAt;
+        private String updatedAt;
+
+        SecurityQuestionDto() {
+            this.id = SecurityQuestion.GRANDMOTHER_NAME.getId();
+            this.securityQuestion = SecurityQuestion.GRANDMOTHER_NAME.getQuestion();
+            this.createdAt = getCurrentTimestamp();
+            this.updatedAt = getCurrentTimestamp();
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getSecurityQuestion() {
+            return securityQuestion;
+        }
+
+        public String getCreatedAt() {
+            return createdAt;
+        }
+
+        public String getUpdatedAt() {
+            return updatedAt;
+        }
+
+        private String getCurrentTimestamp() {
+            DateTimeFormatter formatter = DateTimeFormatter.ISO_INSTANT;
+            return formatter.format(Instant.now());
+        }
+
     }
 }
