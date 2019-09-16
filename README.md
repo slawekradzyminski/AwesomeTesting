@@ -27,6 +27,8 @@
 - [Measuring page load times using Selenium](https://www.awesome-testing.com/2019/01/measuring-page-load-times-using-selenium.html)
 - [Performance testing (benchmarking) Java code with JMH](https://www.awesome-testing.com/2019/05/performance-testing-benchmarking-java.html)
 ## Security
+- [Continuous Security - take care of your regression](https://www.awesome-testing.com/2019/09/continuous-security-take-care-of-your.html)
+- [Continuous Security - how to get involved as a tester?](https://www.awesome-testing.com/2019/08/continuous-security-how-to-get-involved.html)
 - [Continuous Security with OWASP ZAP](https://www.awesome-testing.com/2018/12/continuous-security-with-owasp-zap.html)
 - [Continuous Security with Find-Sec-Bugs](https://www.awesome-testing.com/2018/11/continuous-security-with-find-sec-bugs.html)
 - [Automate your XSS tests with Selenium](https://www.awesome-testing.com/2017/11/automate-your-xss-tests-with-selenium.html)

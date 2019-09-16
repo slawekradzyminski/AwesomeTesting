@@ -5,13 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.DefaultUriBuilderFactory;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class AdminAccessTest {
 
@@ -32,9 +31,10 @@ public class AdminAccessTest {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> body = new HttpEntity<>(jsonObj.toString(), headers);
 
-        ResponseEntity<AdminRegisterResultDto> response = restTemplate.postForEntity("/api/Users", body, AdminRegisterResultDto.class);
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
-        assertThat(response.getBody().getData().getIsAdmin()).isFalse();
+        assertThatThrownBy(
+                () -> restTemplate.postForEntity("/api/Users", body, AdminRegisterResultDto.class))
+                .isInstanceOf(HttpClientErrorException.class)
+                .hasMessageContaining("401 Unauthorized");
     }
 
 }

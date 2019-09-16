@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class OpenRedirectTest {
 
-    private final String REDIRECTION_URL = "https://awesome-testing.com";
+    private static final String REDIRECTION_URL = "https://awesome-testing.com";
     private RestTemplate restTemplate;
 
     @Before
