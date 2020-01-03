@@ -65,6 +65,7 @@
 - [How to speed up your tests in one simple step](https://www.awesome-testing.com/2018/09/how-to-speed-up-your-tests-in-one.html)
 - [Tester's toolbox - an alternative guide](https://www.awesome-testing.com/2016/04/testers-toolbox-alternative-guide.html)
 - [Testing with Ansible](https://www.awesome-testing.com/2015/12/testing-with-ansible.html)
+- [Tester's toolbox - Awesome Testing Christmas edition](https://www.awesome-testing.com/2019/12/testers-toolbox-2-awesome-testing.html)
 ## TestOps
 - [TestOps - the most antifragile testing role](https://www.awesome-testing.com/2018/02/testops-most-antifragile-testing-role.html)
 - [TestOps - Engineering Productivity](https://www.awesome-testing.com/2017/07/testops-5-engineering-productivity.html)
