@@ -52,6 +52,7 @@
 - [Selenium Page Object Pattern - how to handle common components?](https://www.awesome-testing.com/2019/03/selenium-page-object-pattern-how-to.html)
 - [Throttling network is Selenium tests](https://www.awesome-testing.com/2019/06/throttling-network-in-selenium-tests.html)
 ## Testing Thoughts
+- [Practical test strategy for Spring & React application](https://www.awesome-testing.com/2020/01/practical-test-strategy-for-spring.html)
 - [How to get a first job as a software tester?](https://www.awesome-testing.com/2018/08/how-to-get-first-job-as-software-tester.html)
 - [My road to public speaking + slides from Engineering Productivity talk](https://www.awesome-testing.com/2018/04/my-road-to-public-speaking-slides-from.html)
 - [How to be a failure as a software tester](https://www.awesome-testing.com/2018/03/how-to-be-failure-as-software-tester.html)
