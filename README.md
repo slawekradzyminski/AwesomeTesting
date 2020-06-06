@@ -1,5 +1,4 @@
 # Awesome Testing code snippets
-
 ## Blog archive - tags
 - [API testing](#api-testing)
 - [Cypress](#cypress)
@@ -13,13 +12,10 @@
 - [Get rid of your external dependencies with WireMock](https://www.awesome-testing.com/2017/12/get-rid-of-your-external-dependencies.html)
 - [Rest Assured integration tests for jsontest.com](https://www.awesome-testing.com/2017/06/rest-assured-integration-tests-for.html)
 - [RESTful API Testing with Rest-Assured](https://www.awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html)
-
 ## Cypress
 - [Isolated Cypress UI tests](https://www.awesome-testing.com/2020/02/isolated-cypress-ui-tests.html)
-
 ## Mobile
 - [Android testing tools](https://www.awesome-testing.com/2020/04/android-testing-tools.html)
-
 ## Learning
 - [On being multiskilled](https://www.awesome-testing.com/2018/10/on-being-multiskilled.html)
 - [Best Software Testing books](https://www.awesome-testing.com/2017/04/best-software-testing-books.html)
@@ -30,6 +26,7 @@
 - [How to nail job testing interview](https://www.awesome-testing.com/2016/05/how-to-nail-testing-job-interview.html)
 - [Learing pathways for testers](https://www.awesome-testing.com/2016/03/learning-pathways-for-testers.html)
 - [Do's and don'ts for testers - 2016 edition](https://www.awesome-testing.com/2016/02/dos-and-donts-for-testers-2016-edition.html)
+- [Best Software Testing books #2](https://www.awesome-testing.com/2020/06/best-software-testing-books-2.html)
 ## Performance
 - [Five minutes performance report with Google Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with.html)
 - [Measuring page load times using Selenium](https://www.awesome-testing.com/2019/01/measuring-page-load-times-using-selenium.html)
