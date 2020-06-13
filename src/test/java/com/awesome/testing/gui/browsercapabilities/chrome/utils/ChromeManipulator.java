@@ -68,7 +68,6 @@ public class ChromeManipulator extends FluentTest {
         chromeSwitches.add(ALLOW_INSECURE_CONTENT);
         chromeSwitches.add(IGNORE_CERTIFICATE_ERRORS);
         chromeSwitches.add(format("%s%s%s", USER_AGENT, "=", iOS6UA));
-        chromeSwitches.add(START_FULLSCREEN);
         return chromeSwitches;
     }
 

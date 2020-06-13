@@ -237,8 +237,27 @@
             <version>2.8.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.positiondev.epublib</groupId>
+            <artifactId>epublib-core</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.13.1</version>
+        </dependency>
+
+
 
     </dependencies>
+    <repositories>
+        <repository>
+            <id>epublib</id>
+            <url>https://github.com/psiegman/mvn-repo/raw/master/releases</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
