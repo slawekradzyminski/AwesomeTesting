@@ -1,7 +1,7 @@
 # Awesome Testing code snippets
-
 ## Blog archive - tags
 - [API testing](#api-testing)
+- [Cypress](#cypress)
 - [Learning](#learning)
 - [Performance](#performance)
 - [Security](#security)
@@ -12,6 +12,10 @@
 - [Get rid of your external dependencies with WireMock](https://www.awesome-testing.com/2017/12/get-rid-of-your-external-dependencies.html)
 - [Rest Assured integration tests for jsontest.com](https://www.awesome-testing.com/2017/06/rest-assured-integration-tests-for.html)
 - [RESTful API Testing with Rest-Assured](https://www.awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html)
+## Cypress
+- [Isolated Cypress UI tests](https://www.awesome-testing.com/2020/02/isolated-cypress-ui-tests.html)
+## Mobile
+- [Android testing tools](https://www.awesome-testing.com/2020/04/android-testing-tools.html)
 ## Learning
 - [On being multiskilled](https://www.awesome-testing.com/2018/10/on-being-multiskilled.html)
 - [Best Software Testing books](https://www.awesome-testing.com/2017/04/best-software-testing-books.html)
@@ -22,6 +26,7 @@
 - [How to nail job testing interview](https://www.awesome-testing.com/2016/05/how-to-nail-testing-job-interview.html)
 - [Learing pathways for testers](https://www.awesome-testing.com/2016/03/learning-pathways-for-testers.html)
 - [Do's and don'ts for testers - 2016 edition](https://www.awesome-testing.com/2016/02/dos-and-donts-for-testers-2016-edition.html)
+- [Best Software Testing books #2](https://www.awesome-testing.com/2020/06/best-software-testing-books-2.html)
 ## Performance
 - [Five minutes performance report with Google Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with.html)
 - [Measuring page load times using Selenium](https://www.awesome-testing.com/2019/01/measuring-page-load-times-using-selenium.html)
@@ -52,6 +57,7 @@
 - [Selenium Page Object Pattern - how to handle common components?](https://www.awesome-testing.com/2019/03/selenium-page-object-pattern-how-to.html)
 - [Throttling network is Selenium tests](https://www.awesome-testing.com/2019/06/throttling-network-in-selenium-tests.html)
 ## Testing Thoughts
+- [Practical test strategy for Spring & React application](https://www.awesome-testing.com/2020/01/practical-test-strategy-for-spring.html)
 - [How to get a first job as a software tester?](https://www.awesome-testing.com/2018/08/how-to-get-first-job-as-software-tester.html)
 - [My road to public speaking + slides from Engineering Productivity talk](https://www.awesome-testing.com/2018/04/my-road-to-public-speaking-slides-from.html)
 - [How to be a failure as a software tester](https://www.awesome-testing.com/2018/03/how-to-be-failure-as-software-tester.html)
@@ -65,6 +71,7 @@
 - [How to speed up your tests in one simple step](https://www.awesome-testing.com/2018/09/how-to-speed-up-your-tests-in-one.html)
 - [Tester's toolbox - an alternative guide](https://www.awesome-testing.com/2016/04/testers-toolbox-alternative-guide.html)
 - [Testing with Ansible](https://www.awesome-testing.com/2015/12/testing-with-ansible.html)
+- [Tester's toolbox - Awesome Testing Christmas edition](https://www.awesome-testing.com/2019/12/testers-toolbox-2-awesome-testing.html)
 ## TestOps
 - [TestOps - the most antifragile testing role](https://www.awesome-testing.com/2018/02/testops-most-antifragile-testing-role.html)
 - [TestOps - Engineering Productivity](https://www.awesome-testing.com/2017/07/testops-5-engineering-productivity.html)
