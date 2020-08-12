@@ -16,6 +16,7 @@
 - [Isolated Cypress UI tests](https://www.awesome-testing.com/2020/02/isolated-cypress-ui-tests.html)
 ## Mobile
 - [Android testing tools](https://www.awesome-testing.com/2020/04/android-testing-tools.html)
+- [Appium up and running (working example)](https://www.awesome-testing.com/2020/08/appium-up-and-running-working-example.html)
 ## Learning
 - [On being multiskilled](https://www.awesome-testing.com/2018/10/on-being-multiskilled.html)
 - [Best Software Testing books](https://www.awesome-testing.com/2017/04/best-software-testing-books.html)
