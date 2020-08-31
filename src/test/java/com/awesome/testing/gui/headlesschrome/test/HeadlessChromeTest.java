@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class HeadlessChromeTest extends HeadlessChromeConfig {
 
     private static final String URL = "https://resttesttest.com/";
-    private static final String SUCCESS_TEXT = "HTTP 200 OK";
+    private static final String SUCCESS_TEXT = "HTTP 200";
 
     private static final String AJAX_BUTTON_CSS = "#submitajax";
     private static final String ALERT_RESULT_CSS = ".alert-success";
@@ -28,7 +28,7 @@ public class HeadlessChromeTest extends HeadlessChromeConfig {
         await().until(el(AJAX_BUTTON_CSS)).clickable();
         el(AJAX_BUTTON_CSS).click();
         await().atMost(5, TimeUnit.SECONDS).untilPredicate(ajaxCallCompleted);
-        assertThat(el(ALERT_RESULT_CSS).text()).isEqualTo(SUCCESS_TEXT);
+        assertThat(el(ALERT_RESULT_CSS).text()).contains(SUCCESS_TEXT);
     }
 
     private Predicate<FluentControl> ajaxCallCompleted = fluent -> {

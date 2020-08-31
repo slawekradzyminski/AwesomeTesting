@@ -103,21 +103,21 @@
         <dependency>
             <groupId>org.fluentlenium</groupId>
             <artifactId>fluentlenium-core</artifactId>
-            <version>3.9.1</version>
+            <version>3.10.1</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.fluentlenium</groupId>
             <artifactId>fluentlenium-assertj</artifactId>
-            <version>3.9.1</version>
+            <version>3.10.1</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.fluentlenium</groupId>
             <artifactId>fluentlenium-junit</artifactId>
-            <version>3.9.1</version>
+            <version>3.10.1</version>
             <scope>test</scope>
         </dependency>
 
