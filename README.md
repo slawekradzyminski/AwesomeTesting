@@ -1,6 +1,7 @@
 # Awesome Testing code snippets
 ## Blog archive - tags
 - [API testing](#api-testing)
+- [AI & Agentic Testing](#ai--agentic-testing)
 - [Cypress](#cypress)
 - [Learning](#learning)
 - [Performance](#performance)
@@ -32,6 +33,29 @@
 - [Five minutes performance report with Google Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with)
 - [Measuring page load times using Selenium](https://www.awesome-testing.com/2019/01/measuring-page-load-times-using-selenium)
 - [Performance testing (benchmarking) Java code with JMH](https://www.awesome-testing.com/2019/05/performance-testing-benchmarking-java)
+## AI & Agentic Testing
+<!-- AI-POST-LIST:START -->
+- [The Current State of Agentic Software Development](https://www.awesome-testing.com/2026/02/ai-coding-2026-hype-vs-reality)
+- [AI Testing Skills: The Evolution Beyond RAG and MCP](https://www.awesome-testing.com/2025/12/ai-testing-skills)
+- [Why AI Coding Is Moving Back to the Terminal (CLI Agents)](https://www.awesome-testing.com/2025/12/why-ai-coding-is-moving-back-to-terminal)
+- [Learning AI](https://www.awesome-testing.com/2025/12/learning-ai)
+- [Agentic Testing - The New Testing Approach](https://www.awesome-testing.com/2025/11/agentic-testing)
+- [Playwright MCP - Security Best Practices](https://www.awesome-testing.com/2025/11/playwright-mcp-security)
+- [Building RAG with Gemini File Search](https://www.awesome-testing.com/2025/11/gemini-file-search-managed-rag)
+- [Testing LLM-based Systems](https://www.awesome-testing.com/2025/11/testing-llm-based-systems)
+- [Test-Driven AI Development (TDAID)](https://www.awesome-testing.com/2025/10/test-driven-ai-development-tdaid)
+- [Understanding Playwright Agents](https://www.awesome-testing.com/2025/10/playwright-agents)
+- [AI + Chrome DevTools MCP: Trace, Analyse, Fix Performance](https://www.awesome-testing.com/2025/09/chrome-dev-tools-mcp)
+- [Mermaid diagrams: When AI Meets Documentation](https://www.awesome-testing.com/2025/09/mermaid-diagrams)
+- [Playwright Agentic Coding Tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips)
+- [AI Tooling for Developers Landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape)
+- [How does Playwright MCP work?](https://www.awesome-testing.com/2025/07/playwright-mcp)
+- [How I use AI](https://www.awesome-testing.com/2025/06/how-i-use-ai)
+- [AI vibe coding notes from the basement](https://www.awesome-testing.com/2025/04/ai-vibe-coding-notes-from-the-basement)
+- [A Comprehensive Local Testing Stack to Hone Your Skills](https://www.awesome-testing.com/2025/03/comprehensive-local-testing-stack)
+- [Testing Art of War](https://www.awesome-testing.com/2025/01/testing-art-of-war)
+- [From Live Suggestions to Agents: Exploring AI-Powered IDEs](https://www.awesome-testing.com/2024/12/from-live-suggestions-to-agents-exploring-ai-powered-ides)
+<!-- AI-POST-LIST:END -->
 ## Security
 - [Continuous Security - take care of your regression](https://www.awesome-testing.com/2019/09/continuous-security-take-care-of-your)
 - [Continuous Security - how to get involved as a tester?](https://www.awesome-testing.com/2019/08/continuous-security-how-to-get-involved)
