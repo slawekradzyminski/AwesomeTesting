@@ -35,6 +35,7 @@
 - [Performance testing (benchmarking) Java code with JMH](https://www.awesome-testing.com/2019/05/performance-testing-benchmarking-java)
 ## AI & Agentic Testing
 <!-- AI-POST-LIST:START -->
+- [LLMs vs AI Agents: A Practical Mental Model for Developers](https://www.awesome-testing.com/2026/03/llms-vs-ai-agents-practical-mental-model)
 - [Playwright CLI, Skills and Isolated Agentic Testing](https://www.awesome-testing.com/2026/03/playwright-cli-skills-and-isolated-agentic-testing)
 - [The Current State of Agentic Software Development](https://www.awesome-testing.com/2026/02/ai-coding-2026-hype-vs-reality)
 - [AI Testing Skills: The Evolution Beyond RAG and MCP](https://www.awesome-testing.com/2025/12/ai-testing-skills)
@@ -54,7 +55,6 @@
 - [How I use AI](https://www.awesome-testing.com/2025/06/how-i-use-ai)
 - [AI vibe coding notes from the basement](https://www.awesome-testing.com/2025/04/ai-vibe-coding-notes-from-the-basement)
 - [A Comprehensive Local Testing Stack to Hone Your Skills](https://www.awesome-testing.com/2025/03/comprehensive-local-testing-stack)
-- [Testing Art of War](https://www.awesome-testing.com/2025/01/testing-art-of-war)
 <!-- AI-POST-LIST:END -->
 ## Security
 - [Continuous Security - take care of your regression](https://www.awesome-testing.com/2019/09/continuous-security-take-care-of-your)
