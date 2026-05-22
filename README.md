@@ -29,7 +29,7 @@
 - [Learing pathways for testers](https://www.awesome-testing.com/2016/03/learning-pathways-for-testers)
 - [Do's and don'ts for testers - 2016 edition](https://www.awesome-testing.com/2016/02/dos-and-donts-for-testers-2016-edition)
 - [Best Software Testing books #2](https://www.awesome-testing.com/2020/06/best-software-testing-books-2)
-- [TutorialSearch](https://tutorialsearch.io/) - Free cross-platform search engine indexing 50,000+ tutorials from Udemy, Skillshare, Pluralsight, and other major learning platforms across 45+ categories.
+- [TutorialSearch](https://tutorialsearch.io/browse/software-testing) - Free cross-platform search engine indexing 50,000+ tutorials from Udemy, Skillshare, Pluralsight, and other major learning platforms across 45+ categories.
 ## Performance
 - [Five minutes performance report with Google Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with)
 - [Measuring page load times using Selenium](https://www.awesome-testing.com/2019/01/measuring-page-load-times-using-selenium)
