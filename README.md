@@ -35,6 +35,8 @@
 - [Performance testing (benchmarking) Java code with JMH](https://www.awesome-testing.com/2019/05/performance-testing-benchmarking-java)
 ## AI & Agentic Testing
 <!-- AI-POST-LIST:START -->
+- [AI Coding Agents in 2026: Discovery, Skills, Costs, and What Comes Next](https://www.awesome-testing.com/2026/07/ai-coding-agents-in-2026)
+- [Local Image Generation with Bonsai Image 4B](https://www.awesome-testing.com/2026/05/local-image-generation-with-bonsai-image-4b)
 - [From One Local Stack to Three Training Profiles](https://www.awesome-testing.com/2026/03/from-one-local-stack-to-three-training-profiles)
 - [LLMs vs AI Agents: A Practical Mental Model for Developers](https://www.awesome-testing.com/2026/03/llms-vs-ai-agents-practical-mental-model)
 - [Playwright CLI, Skills and Isolated Agentic Testing](https://www.awesome-testing.com/2026/03/playwright-cli-skills-and-isolated-agentic-testing)
@@ -53,9 +55,6 @@
 - [Playwright Agentic Coding Tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips)
 - [AI Tooling for Developers Landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape)
 - [How does Playwright MCP work?](https://www.awesome-testing.com/2025/07/playwright-mcp)
-- [How I use AI](https://www.awesome-testing.com/2025/06/how-i-use-ai)
-- [AI vibe coding notes from the basement](https://www.awesome-testing.com/2025/04/ai-vibe-coding-notes-from-the-basement)
-- [A Comprehensive Local Testing Stack to Hone Your Skills](https://www.awesome-testing.com/2025/03/comprehensive-local-testing-stack)
 <!-- AI-POST-LIST:END -->
 ## Security
 - [Continuous Security - take care of your regression](https://www.awesome-testing.com/2019/09/continuous-security-take-care-of-your)
