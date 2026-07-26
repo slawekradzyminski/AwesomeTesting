@@ -35,6 +35,8 @@
 - [Performance testing (benchmarking) Java code with JMH](https://www.awesome-testing.com/2019/05/performance-testing-benchmarking-java)
 ## AI & Agentic Testing
 <!-- AI-POST-LIST:START -->
+- [Voice Interface for AI Discovery and Learning](https://www.awesome-testing.com/2026/07/voice-interface-for-ai-discovery-and-learning)
+- [Self-Healing Tests with AI: Triage Before Repair](https://www.awesome-testing.com/2026/07/self-healing-tests-with-ai)
 - [AI Coding Agents in 2026: Discovery, Skills, Costs, and What Comes Next](https://www.awesome-testing.com/2026/07/ai-coding-agents-in-2026)
 - [Local Image Generation with Bonsai Image 4B](https://www.awesome-testing.com/2026/05/local-image-generation-with-bonsai-image-4b)
 - [From One Local Stack to Three Training Profiles](https://www.awesome-testing.com/2026/03/from-one-local-stack-to-three-training-profiles)
@@ -53,8 +55,6 @@
 - [AI + Chrome DevTools MCP: Trace, Analyse, Fix Performance](https://www.awesome-testing.com/2025/09/chrome-dev-tools-mcp)
 - [Mermaid diagrams: When AI Meets Documentation](https://www.awesome-testing.com/2025/09/mermaid-diagrams)
 - [Playwright Agentic Coding Tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips)
-- [AI Tooling for Developers Landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape)
-- [How does Playwright MCP work?](https://www.awesome-testing.com/2025/07/playwright-mcp)
 <!-- AI-POST-LIST:END -->
 ## Security
 - [Continuous Security - take care of your regression](https://www.awesome-testing.com/2019/09/continuous-security-take-care-of-your)
